@@ -1,0 +1,50 @@
+$Theme-Primary:#E5E5E5;
+$Theme-White:#FFFFFF;
+$Theme-Dark:#000000;
+$Theme-Color-Blue:#5A55D2;
+$Theme-Color-White:#EFF0F4;
+$Theme-Color-Green:#00DEA3;
+$Text-Color-Dark:#00140E;
+$Text-Color-Red:#FF0000;
+$Text-Color-DarkGrey:#333333;
+$Text-Color-Green:$ThemeColorGreen;
+$Text-Color-While:$Theme-Color-White;
+$Text-Color-BlueDark:#192A3E;
+$Text-Color-BlueLight:#90A0B7;
+$Icon-Color-Dark:#231F20;
+$Icon-Color-Violet:#783EFD;
+
+$Text-Font-size-Biggest:24px;
+$Text-Font-size-large:21px;
+$Text-Font-size-Large:18px;
+$Text-Font-size-Medium:16px;
+$Text-Font-size-Small:12px;
+$Text-Font-size-Smallest:10px;
+
+@mixin button-Needed{
+    width: 130px;
+    height: 28px;
+    background: rgba(36, 193, 143, 0.2);
+    border-radius: 16px;
+}
+@mixin button-Edit{
+    width: 144px;
+    height: 42px;
+    background: #5F66E9;
+    border-radius: 6px;
+}
+@mixin button-Import{
+    width: 84.34px;
+    height: 34px;
+    background:$Theme-White;
+    border-radius: 4px;
+}
+@mixin content-nav{
+    height: 22px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $Text-Color-Dark;
+}
