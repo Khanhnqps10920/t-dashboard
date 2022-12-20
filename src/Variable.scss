@@ -48,3 +48,7 @@ $Text-Font-size-Smallest:10px;
     line-height: 22px;
     color: $Text-Color-Dark;
 }
+@mixin icon-nav{
+    width: 20px;
+    color: $Icon-Color-Dark;
+}
