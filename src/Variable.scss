@@ -7,48 +7,74 @@ $Theme-Color-Green:#00DEA3;
 $Text-Color-Dark:#00140E;
 $Text-Color-Red:#FF0000;
 $Text-Color-DarkGrey:#333333;
-$Text-Color-Green:$ThemeColorGreen;
+$Text-Color-Green:$Theme-Color-Green;
 $Text-Color-While:$Theme-Color-White;
 $Text-Color-BlueDark:#192A3E;
 $Text-Color-BlueLight:#90A0B7;
 $Icon-Color-Dark:#231F20;
 $Icon-Color-Violet:#783EFD;
 
-$Text-Font-size-Biggest:24px;
-$Text-Font-size-large:21px;
-$Text-Font-size-Large:18px;
-$Text-Font-size-Medium:16px;
-$Text-Font-size-Small:12px;
-$Text-Font-size-Smallest:10px;
-
+//html-font-size=10px
+$Text-Font-size-Biggest:2.4rem;
+$Text-Font-size-large:2.1rem;
+$Text-Font-size-Medium:1.6rem;
+$Text-Font-size-Small:1.2rem;
+$Text-Font-size-Smallest:1rem;
 @mixin button-Needed{
-    width: 130px;
-    height: 28px;
-    background: rgba(36, 193, 143, 0.2);
-    border-radius: 16px;
+    width: 13rem;
+    height: 2.8rem;
+    background:rgba(36, 193, 143, 0.2) ;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    &:hover{
+        background:rgba(36, 193, 143, 0.6) ;
+    }
+    &:focus{
+        background:rgba(36, 193, 143) ;
+    }
 }
 @mixin button-Edit{
-    width: 144px;
-    height: 42px;
+    width: 14.4rem;
+    height: 4.2rem;
     background: #5F66E9;
-    border-radius: 6px;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    &:hover{
+        background:#040ca1 ;
+    }
 }
 @mixin button-Import{
-    width: 84.34px;
-    height: 34px;
+    width: 8.434rem;
+    height: 3.4rem;
     background:$Theme-White;
-    border-radius: 4px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    &:hover{
+        background:$Theme-Dark;
+        color: $Theme-White;
+    }
 }
-@mixin content-nav{
-    height: 22px;
+@mixin sideMenu-Content{
+    height: 2.2rem;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     color: $Text-Color-Dark;
 }
-@mixin icon-nav{
-    width: 20px;
+@mixin SideMenu-Icon{
+    width: 2rem;
     color: $Icon-Color-Dark;
 }
+@function setWidthColumn($widthwrap, $item) {
+    //$widthwrap=>total width row
+    //$item=>number of columns
+    @return $widthWarp / $item;
+}
+@function setWidthColumnMargin($widthwrap,$item,$marginColumn) {
+    //$widthwrap=>total width row
+    //$item=>number of columns
+    @return ($widthWarp / $item)-$marginColumn*2;
+}
+
