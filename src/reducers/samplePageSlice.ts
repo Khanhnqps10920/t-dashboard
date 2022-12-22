@@ -34,6 +34,11 @@ const samplePageSlice = createSlice({
                 state.data.splice(index,1);
             }
         },
+        editData:(state: IinitialState, action: {type:string, payload: {dataSubmit: IValueSample, indexEdit: number}})=>{
+            if(action.payload.indexEdit > -1){
+                state.data[action.payload.indexEdit] = action.payload.dataSubmit;
+            }
+        },
         // some actions of the redux
     }
 });
@@ -54,7 +59,7 @@ export const middleware = () : ThunkAction<void, RootState, unknown, AnyAction> 
     }
 };
 
-export const { /*put reducers above*/ loadInitialData ,addData, deleteData } =  samplePageSlice.actions;
+export const { /*put reducers above*/ loadInitialData ,addData, deleteData, editData } =  samplePageSlice.actions;
 export const SamplePage = (state: RootState) => state.samplePageSlice;
 export default samplePageSlice.reducer;
 // remember to put the slice to the /redux/store.ts

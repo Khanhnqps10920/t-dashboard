@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 
 // import Redux
 import { useAppDispatch } from '../../redux/hooks';
-import { addData } from '../../reducers/samplePageSlice';
+import { addData, editData } from '../../reducers/samplePageSlice';
 import { nanoid } from '@reduxjs/toolkit';
 
 // import Interface
 import { IValueSample } from '../../reducers/samplePageSlice';
 
-const valueSample: IValueSample = {
-  id: '',
-  name: '',
-  title: ''
+import { valueSample } from '.';
+
+interface props{
+  indexEdit: number, 
+  setIndexEdit: React.Dispatch<React.SetStateAction<number>>, 
+  dataSubmit: IValueSample, 
+  setDataSubmit: React.Dispatch<React.SetStateAction<IValueSample>>
 };
 
-const AddForm = () =>{
-  //state and actions from Slice
+const AddForm = ({indexEdit, setIndexEdit, dataSubmit, setDataSubmit} : props) =>{
+   // useAppDispatch to get the function to call the action in the reducers
   const dispatch = useAppDispatch();
-
-  //useState for submit
-  const [dataSubmit,setDataSubmit]= useState(valueSample);
 
   //Handle the data input
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +30,16 @@ const AddForm = () =>{
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if(dataSubmit.name && dataSubmit.title){
-      dispatch(addData({...dataSubmit, id:nanoid()}));
-      // call API to post the new data await async
+      console.log(indexEdit);
+      if(indexEdit <= -1){
+        dispatch(addData({...dataSubmit, id:nanoid()}));
+        // call API to post the new data; await async
+      }
+      else{
+        dispatch(editData({dataSubmit, indexEdit}));
+        // call API to put the new data; await async
+        setIndexEdit(-1);
+      }
     }
     setDataSubmit(valueSample);
   }
