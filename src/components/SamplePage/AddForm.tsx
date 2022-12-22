@@ -28,6 +28,7 @@ const AddForm = () =>{
   }
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if(dataSubmit.name && dataSubmit.title){
       dispatch(addData({...dataSubmit, id:nanoid()}));
     }
@@ -39,6 +40,7 @@ const AddForm = () =>{
     <form action="" onSubmit={(event)=>{onSubmit(event)}}>
       <input type="text" name="name" value={dataSubmit.name} onChange={(event)=>{onChangeInput(event)}}/>
       <input type="text" name="title" value={dataSubmit.title} onChange={(event)=>{onChangeInput(event)}}/>
+      <button type="submit">Submit</button>
     </form>
   );
 }

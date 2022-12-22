@@ -16,7 +16,7 @@ const SamplePageShow = () =>{
         <td>{element.id}</td>
         <td>{element.name}</td>
         <td>{element.title}</td>
-        <button onClick={()=>{dispatch(deleteData);}}>Delete</button>
+        <button onClick={()=>{dispatch(deleteData(element));}}>Delete</button>
       </tr>
     });
   }
