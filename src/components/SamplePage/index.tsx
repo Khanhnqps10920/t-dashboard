@@ -1,5 +1,9 @@
-import React from 'react';
+import AddForm from './AddForm';
+import SamplePageShow from './SamplePageShow';
 
 export const TestPage = () => {
-  return <div>Test page</div>;
+  return <div>
+    <AddForm />
+    <SamplePageShow />
+  </div>;
 };
