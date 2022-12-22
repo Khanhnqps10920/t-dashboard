@@ -31,6 +31,7 @@ const AddForm = () =>{
     event.preventDefault();
     if(dataSubmit.name && dataSubmit.title){
       dispatch(addData({...dataSubmit, id:nanoid()}));
+      // call API to post the new data await async
     }
     setDataSubmit(valueSample);
   }
