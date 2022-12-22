@@ -1,0 +1,35 @@
+@import '../../../../Variable';
+
+.nav-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+
+    &__icon__wrapper {
+        margin-right: 12px;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-family: "Gilroy";
+        font-weight: normal;
+        margin-right: 8px;
+    }
+
+    &.active {
+        .nav-link__text {
+            color: $Text-Color-Green
+        }
+
+        .active-dot {
+            width: 8px;
+            height: 8px;
+            background-color: $Theme-Color-Green;
+            border-radius: 50%;
+        }
+    }
+
+
+}

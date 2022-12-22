@@ -1,3 +1,23 @@
+@import 'Variable';
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("./assets/fonts/Gilroy/Gilroy-SemiBold.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("./assets/fonts/Gilroy/Gilroy-Bold.ttf");
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -11,24 +31,23 @@ body {
     width: 100vw;
     align-items: center;
     justify-content: center;
+    color: $Text-Color-Dark;
 }
 
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(../src/assets/fonts/Poppins/Poppins-Bold.ttf) format('woff2');
+
+ul {
+    list-style-type: none;
 }
 
-@font-face {
-    font-family: "Gilroy";
-    src: url("../src/assets/fonts/Gilroy/Gilroy-Bold.ttf");
-    font-weight: 500;
+img {
+    width: 100%;
+    object-fit: cover;
 }
 
-@font-face {
-    font-family: "Gilroy";
-    src: url("../src/assets/fonts/Gilroy/Gilroy-Bold.ttf");
-    font-weight: 700;
+a {
+    text-decoration: none;
+}
+
+#root {
+    width: 100%;
 }

@@ -1,0 +1,29 @@
+.logo {
+    margin-bottom: 29px;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2.4rem;
+    }
+
+    hr {
+        border: 0.5px solid #E4E7ED;
+    }
+
+    &__img__wrapper {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 1.6rem;
+    }
+
+    &__text {
+        font-family: "Gilroy";
+        font-weight: bold;
+        font-size: 2.4rem;
+    }
+
+    &.dashboard {
+        margin-bottom: 43px;
+    }
+}
