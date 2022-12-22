@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // import Redux
-import { useAppDispatch } from '../redux/hooks';
+import { useAppDispatch } from '../../redux/hooks';
 import { addData } from './samplePageSlice';
 import { nanoid } from '@reduxjs/toolkit';
 

@@ -1,5 +1,5 @@
 import { AnyAction, createSlice, ThunkAction } from "@reduxjs/toolkit"
-import { RootState } from "../redux/store";
+import { RootState } from "../../redux/store";
 
 export interface IValueSample{
     id: string,

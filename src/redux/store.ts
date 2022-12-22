@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import samplePageSlice from "../SamplePage/samplePageSlice";
+import samplePageSlice from "../components/SamplePage/samplePageSlice";
 //import your slice 
 
 const store = configureStore({
