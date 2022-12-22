@@ -1,10 +1,10 @@
 // import redux
-import { deleteData } from "./samplePageSlice";
-import { SamplePage } from './samplePageSlice';
+import { deleteData } from "../../reducers/samplePageSlice";
+import { SamplePage } from '../../reducers/samplePageSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 //import interface
-import { IinitialState } from "./samplePageSlice";
+import { IinitialState } from "../../reducers/samplePageSlice";
 
 const SamplePageShow = () =>{
   const SamplePageData = useAppSelector(SamplePage);

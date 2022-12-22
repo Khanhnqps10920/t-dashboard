@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 // import Redux
 import { useAppDispatch } from '../../redux/hooks';
-import { addData } from './samplePageSlice';
+import { addData } from '../../reducers/samplePageSlice';
 import { nanoid } from '@reduxjs/toolkit';
 
 // import Interface
-import { IValueSample } from './samplePageSlice';
+import { IValueSample } from '../../reducers/samplePageSlice';
 
 const valueSample: IValueSample = {
   id: '',
