@@ -10,14 +10,14 @@ import { IValueSample } from '../../reducers/samplePageSlice';
 
 import { valueSample } from '.';
 
-interface props{
+interface Iprops{
   indexEdit: number, 
   setIndexEdit: React.Dispatch<React.SetStateAction<number>>, 
   dataSubmit: IValueSample, 
   setDataSubmit: React.Dispatch<React.SetStateAction<IValueSample>>
 };
 
-const AddForm = ({indexEdit, setIndexEdit, dataSubmit, setDataSubmit} : props) =>{
+const AddForm = ({indexEdit, setIndexEdit, dataSubmit, setDataSubmit} : Iprops) =>{
    // useAppDispatch to get the function to call the action in the reducers
   const dispatch = useAppDispatch();
 

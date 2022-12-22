@@ -11,12 +11,12 @@ import { IValueSample } from "../../reducers/samplePageSlice";
 import { useEffect } from "react";
 
 // props interface
-interface props{
+interface Iprops{
   setIndexEdit: React.Dispatch<React.SetStateAction<number>>, 
   setDataSubmit: React.Dispatch<React.SetStateAction<IValueSample>>
 };
 
-const SamplePageShow = ({setIndexEdit, setDataSubmit} : props) =>{
+const SamplePageShow = ({setIndexEdit, setDataSubmit} : Iprops) =>{
   // useAppSelector to get the data you want in the store.ts
   const SamplePageData = useAppSelector(SamplePage);
   // useAppDispatch to get the function to call the action in the reducers
