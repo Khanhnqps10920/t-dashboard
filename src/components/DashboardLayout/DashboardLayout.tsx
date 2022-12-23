@@ -21,10 +21,16 @@ const Container = styled.div<ContainerPropsType>`
       flex:1;
 `;
 
+type ContentPropsType = {
+  dashboard?: boolean
+}
 
-const Content = styled.div`
+const Content = styled.div<ContentPropsType>`
   flex:1;
-`
+  padding: ${props => props.dashboard
+    ? "3px 32px"
+    : "38px 24px"};
+`;
 type DashBoardConfigType = {
   type?: 'dashboard' | 'monitoring'
 }
@@ -44,7 +50,7 @@ export const DashboardLayout = ({ type = 'monitoring' }: DashboardPropsType) => 
           <Sidebar />
           <Container column>
             <Header />
-            <Content>
+            <Content dashboard={type === 'dashboard'}>
               <Outlet />
             </Content>
           </Container>
