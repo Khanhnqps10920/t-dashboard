@@ -8,25 +8,25 @@ export const Login = () => {
   console.log('login page');
   return (
     <div className='login'>
-      <div className='login-wrapper'>
-        <div className='login-wrapper-left'>
+      <div className='login__wrapper'>
+        <div className='login__wrapper--left'>
           <img src={loginImage} alt="" />
         </div>
-        <div className='login-wrapper-right'>
+        <div className='login__wrapper--right'>
           <div className='logo'>
-            <img className='logo-img' src={logo}></img>
-            <div className='logo-text'>ZARVIS</div>
+            <img className='logo__img' src={logo}></img>
+            <div className='logo__text'>ZARVIS</div>
           </div>
           <Form layout="vertical" >
-            <div className='login-input'>
-              <label className='login-input-label'>Username</label>
+            <div className='login__input'>
+              <label className='login__input--label'>Username</label>
               <Input placeholder='Enter your username'></Input>
             </div>
-            <div className='login-input'>
-              <label className='login-input-label'>Password</label>
+            <div className='login__input'>
+              <label className='login__input--label'>Password</label>
               <Input type='password' placeholder='Enter your password'></Input>
             </div>
-            <Button className='login-btn'>Login</Button>
+            <Button className='login__btn'>Login</Button>
           </Form>
         </div>
       </div>
