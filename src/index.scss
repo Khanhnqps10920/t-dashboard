@@ -1,3 +1,13 @@
-html{
+html {
     font-size: 62.5%;
+}
+
+body {
+    background: url(/src/assets/image/back.png);
+    background-color: #EFF3FD;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
 }

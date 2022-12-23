@@ -5,11 +5,8 @@
 }
 
 .login {
-    position: relative;
-    width: 144rem;
-    height: 101.6rem;
-
-    background: #EFF3FD;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-wrapper {
@@ -17,16 +14,14 @@
     flex-direction: row;
     align-items: center;
     padding: 7.2rem 0rem;
-
-    position: absolute;
+    // position: absolute;
     width: 100rem;
     height: 60rem;
-    left: 22rem;
-    top: 20.8rem;
-
-    /* Colors/Primary White */
+    // left: 22rem;
+    // top: 20.8rem;
 
     background: #FFFFFF;
+    /* Colors/Primary White */
     border-radius: 1.6rem;
 }
 
@@ -53,14 +48,9 @@
     justify-content: center;
     align-items: center;
     padding: 0rem 3.2rem;
-    // gap: 1.8rem;
-
     width: 50rem;
     height: 45.6rem;
-
     border-left: 0.1rem solid rgba(26, 30, 41, 0.12);
-
-
 }
 
 .logo {
@@ -70,7 +60,6 @@
     align-items: center;
     padding: 0rem;
     gap: 1.2rem;
-
     width: 8.2rem;
     height: 11.3rem;
 }
@@ -78,23 +67,18 @@
 .logo-img {
     width: 7.2rem;
     height: 7.2rem;
-
     border-radius: 1.16468rem;
 }
 
 .logo-text {
     width: 8.2rem;
     height: 2.9rem;
-
-    /* Display Text/Extra-Small/Bold */
-
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 2.9rem;
     /* identical to box height */
-
     letter-spacing: 0.016em;
 
     /* Stroke 2nd */
@@ -126,11 +110,8 @@
     flex-direction: row;
     align-items: center;
     padding: 0.8rem 1.6rem;
-    // gap: 12px;
-
     width: 32.8rem;
     height: 4rem;
-
     background: #FFFFFF;
     border: 0.1rem solid #D6E4EC;
     border-radius: 0.6rem;
@@ -142,11 +123,9 @@
     justify-content: center;
     align-items: center;
     padding: 1rem 3.2rem;
-    // gap: 8px;
     color: #FFFFFF;
     width: 32.8rem;
     height: 3.5rem;
-
     background: #5A55D2;
     border-radius: 0.6rem;
 

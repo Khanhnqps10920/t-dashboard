@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../src/index.scss'
 import { Button, Form, Input } from 'antd'
 import '../Login/login.scss'
 import logo from '../../assets/image/Rectangle 337.png'
