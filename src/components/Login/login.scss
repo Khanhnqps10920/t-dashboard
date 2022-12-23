@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.login {
+    position: relative;
+    width: 144rem;
+    height: 101.6rem;
+
+    background: #EFF3FD;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7.2rem 0rem;
+
+    position: absolute;
+    width: 100rem;
+    height: 60rem;
+    left: 22rem;
+    top: 20.8rem;
+
+    /* Colors/Primary White */
+
+    background: #FFFFFF;
+    border-radius: 1.6rem;
+}
+
+.login-wrapper-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+    gap: 1rem;
+
+    width: 50rem;
+    height: 45.6rem;
+}
+
+
+
+.login-wrapper-right {
+    box-sizing: border-box;
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 3.2rem;
+    // gap: 1.8rem;
+
+    width: 50rem;
+    height: 45.6rem;
+
+    border-left: 0.1rem solid rgba(26, 30, 41, 0.12);
+
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    width: 82px;
+    height: 113px;
+}
+
+.logo-img {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 11.6468px;
+}
+
+.logo-text {
+    width: 82px;
+    height: 29px;
+
+    /* Display Text/Extra-Small/Bold */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    letter-spacing: 0.016em;
+
+    /* Stroke 2nd */
+
+    color: #1A1E29;
+
+}
+
+
+.login-input {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 6px;
+
+    width: 328px;
+    height: 58px;
+
+
+
+}
+
+.login-input input {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    // gap: 12px;
+
+    width: 328px;
+    height: 40px;
+
+    background: #FFFFFF;
+    border: 1px solid #D6E4EC;
+    border-radius: 6px;
+}
+
+.login-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 32px;
+    // gap: 8px;
+    color: #FFFFFF;
+    width: 328px;
+    height: 3.5rem;
+
+    background: #5A55D2;
+    border-radius: 6px;
+
+}
