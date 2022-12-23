@@ -1,0 +1,132 @@
+@import '../../Variable.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.login {
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 7.2rem 0rem;
+        width: 100rem;
+        height: 60rem;
+        background: #FFFFFF;
+        /* Colors/Primary White */
+        border-radius: 1.6rem;
+
+        &__left {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 50rem;
+            height: 45.6rem;
+        }
+
+        &__right {
+            box-sizing: border-box;
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0rem 3.2rem;
+            width: 50rem;
+            height: 45.6rem;
+            border-left: 0.1rem solid $Boder-Left-Color;
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2rem;
+                width: 8.2rem;
+                height: 11.3rem;
+
+                &__img {
+                    width: 7.2rem;
+                    height: 7.2rem;
+                    border-radius: 1.2rem;
+                }
+
+                &__text {
+                    width: 8.2rem;
+                    height: 2.9rem;
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    line-height: 2.9rem;
+                    /* identical to box height */
+                    letter-spacing: 0.016em;
+                    /* Stroke 2nd */
+                    color: #1A1E29;
+                }
+            }
+
+
+        }
+    }
+
+    &__input {
+        display: flex;
+        margin-bottom: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0rem;
+        width: 32.8rem;
+        height: 5.8rem;
+
+        &__label {
+            width: 32.8rem;
+            height: 1.2rem;
+            margin: 1rem 0;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.05rem;
+            /* Primary / Dark * 500 */
+            color: $Input-Text-Color;
+        }
+
+        .login__input input {
+            box-sizing: border-box;
+            /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0.8rem 1.6rem;
+            width: 32.8rem;
+            height: 4rem;
+            background: #FFFFFF;
+            border: 0.1rem solid $Boder-Input-Color;
+            border-radius: 0.6rem;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 3.2rem;
+        color: #FFFFFF;
+        width: 32.8rem;
+        height: 3.5rem;
+        background: #5A55D2;
+        border-radius: 0.6rem;
+        margin-top: 3rem;
+    }
+}
