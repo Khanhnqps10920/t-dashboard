@@ -19,11 +19,11 @@ export const Login = () => {
           </div>
           <Form layout="vertical" >
             <div className='login-input'>
-              <label>Username</label>
+              <label className='login-input-label'>Username</label>
               <Input placeholder='Enter your username'></Input>
             </div>
             <div className='login-input'>
-              <label>Password</label>
+              <label className='login-input-label'>Password</label>
               <Input className='input-' type='password' placeholder='Enter your password'></Input>
             </div>
             <Button className='login-btn'>Login</Button>

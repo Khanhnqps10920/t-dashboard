@@ -14,12 +14,8 @@
     flex-direction: row;
     align-items: center;
     padding: 7.2rem 0rem;
-    // position: absolute;
     width: 100rem;
     height: 60rem;
-    // left: 22rem;
-    // top: 20.8rem;
-
     background: #FFFFFF;
     /* Colors/Primary White */
     border-radius: 1.6rem;
@@ -37,12 +33,9 @@
     height: 45.6rem;
 }
 
-
-
 .login-wrapper-right {
     box-sizing: border-box;
     /* Auto layout */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,9 +73,7 @@
     line-height: 2.9rem;
     /* identical to box height */
     letter-spacing: 0.016em;
-
     /* Stroke 2nd */
-
     color: #1A1E29;
 
 }
@@ -96,16 +87,27 @@
     padding: 0rem;
     width: 32.8rem;
     height: 5.8rem;
+}
 
-
-
+.login-input-label {
+    width: 328px;
+    height: 12px;
+    margin: 10px 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    /* Primary / Dark * 500 */
+    color: #343C44;
 }
 
 .login-input input {
     box-sizing: border-box;
-
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -128,5 +130,5 @@
     height: 3.5rem;
     background: #5A55D2;
     border-radius: 0.6rem;
-
+    margin-top: 3rem;
 }
