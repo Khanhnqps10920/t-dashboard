@@ -6,7 +6,7 @@ import logo from '../../assets/image/Rectangle 337.png'
 import loginImage from '../../assets/image/Artboard-113_WF-Automation-illustrations 1 (1).png'
 export const Login = () => {
   console.log('login page');
-  return <div>
+  return (
     <div className='login'>
       <div className='login-wrapper'>
         <div className='login-wrapper-left'>
@@ -30,6 +30,5 @@ export const Login = () => {
           </Form>
         </div>
       </div>
-    </div>
-  </div>;
+    </div>)
 };
