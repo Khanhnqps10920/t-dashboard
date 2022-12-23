@@ -12,3 +12,23 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../src/assets/fonts/Poppins/Poppins-Bold.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../src/assets/fonts/Gilroy/Gilroy-Bold.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../src/assets/fonts/Gilroy/Gilroy-Bold.ttf");
+    font-weight: 700;
+}
