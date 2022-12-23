@@ -2,7 +2,15 @@
     position: relative;
     height: 100vh;
     width: 30rem;
-    padding: 22px 16px 34px 16px;
+    padding: 22px 28px 34px;
     display: flex;
     flex-direction: column;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+
+    &.dashboard {
+        width: 25.5rem;
+        padding-left: 40px;
+        padding-right: 50px;
+    }
 }

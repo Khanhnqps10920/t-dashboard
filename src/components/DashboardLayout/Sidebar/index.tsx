@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from './Logo'
 import './styles/Sidebar.scss'
 import NavLinks from './NavLinks'
 import DashBoardBanner from './DashBoardBanner'
+import { DashBoardContext } from '../DashboardLayout'
 
-type SidebarPropsType = {
-    type: 'dashboard' | 'monitoring'
-}
 
-const Sidebar = ({ type = 'dashboard' }: SidebarPropsType) => {
+const Sidebar = () => {
+    const { type } = useContext(DashBoardContext);
     return (
-        <div className='sidebar'>
+        <div className={`sidebar ${type}`}>
             <Logo />
             <NavLinks />
             {type === 'dashboard' && <DashBoardBanner />}

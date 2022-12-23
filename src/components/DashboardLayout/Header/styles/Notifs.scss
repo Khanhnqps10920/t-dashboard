@@ -1,0 +1,30 @@
+.notifs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &__wrapper {
+        position: relative;
+        width: 24px;
+        height: 24px;
+
+        &__active-icon {
+            width: 8px;
+            height: 8px;
+            background-color: #F23985;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+        }
+    }
+
+    &.dashboard {
+        width: 48px;
+        height: 48px;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+}

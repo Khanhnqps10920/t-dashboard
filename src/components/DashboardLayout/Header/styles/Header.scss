@@ -1,0 +1,90 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    font-family: 'Poppins';
+    background-color: #fff;
+
+    &__left {
+        margin-right: auto;
+
+        .hello {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .date {
+            font-size: 1.1rem;
+            color: #707EAE;
+        }
+    }
+
+    &__center {
+        position: relative;
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            width: 24px;
+            height: 24px;
+            transform: translateY(-50%);
+        }
+
+        .search-input {
+            border: none;
+            border-radius: 8px;
+            padding: 12px 50px 12px 0px;
+            text-indent: 50px;
+            max-width: 40rem;
+            width: 20vw;
+            min-width: 20rem;
+            font-size: 1.4rem;
+            background-color: #fff;
+            outline: none;
+
+            &::placeholder {
+                color: #AEB6CF;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        .name--left {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-left: 20px;
+            margin-right: 8px;
+        }
+
+        .user-photo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+        }
+    }
+
+    &.dashboard {
+        background-color: transparent;
+        justify-content: space-between;
+
+        .header__left {
+            margin-right: unset;
+
+            .hello {
+                font-size: 2.4rem;
+            }
+
+            .date {
+                font-size: 1.4rem;
+            }
+        }
+
+
+    }
+}
