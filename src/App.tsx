@@ -18,7 +18,7 @@ function App() {
       <AuthContextProvider authProvider={authProvider}>
         <Routes>
           <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
-            <Route path={pages.DASHBOARD} element={<DashboardLayout />}>
+            <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
               <Route index element={<Home />} />
               <Route path={'/test'} element={<TestPage />} />
             </Route>

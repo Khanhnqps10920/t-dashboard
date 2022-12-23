@@ -47,18 +47,15 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     background: url(/src/assets/image/back.png);
     background-color: #EFF3FD;
     background-size: cover;
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
     color: $Text-Color-Dark;
+    height: 100%;
 }
 
 
@@ -76,5 +73,5 @@ a {
 }
 
 #root {
-    width: 100%;
+    height: 100%;
 }
