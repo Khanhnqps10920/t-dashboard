@@ -4,6 +4,8 @@ import { Button, Form, Input } from 'antd'
 import '../Login/login.scss'
 import logo from '../../assets/image/login-logo.png'
 import loginImage from '../../assets/image/login-image.png'
+import ButtonComponent from '../Button/Button';
+import {UpCircleOutlined} from "@ant-design/icons"
 export const Login = () => {
   console.log('login page');
   return (
@@ -27,6 +29,15 @@ export const Login = () => {
               <Input type='password' placeholder='Enter your password'></Input>
             </div>
             <Button className="login__btn">Login</Button>
+
+
+
+            <ButtonComponent className='login' onclick={()=>{console.log('dasdas')}} icon={<UpCircleOutlined/>} text='Login'/>
+          
+          
+          
+          
+          
           </Form>
         </div>
       </div>

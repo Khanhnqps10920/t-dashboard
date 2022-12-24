@@ -1,28 +1,35 @@
 import { Button } from "antd";
 interface btnComponent{
-    icon:any,
-    text:string,
     className:string,
     onclick:any,
+    icon:any,
+    text:string,
 }
-// {demo
-     /*  <ButtonComponent type="dashed" 
-icon={<i className="fa-solid fa-download"></i>} 
-text="abcxyz" className="abc" 
-onclick={()=>{console.log('dasdsda')}}/> */
+{/* <ButtonComponent 
+className='login'
+ onclick={()=>{console.log('dasdas')}} 
+icon={<UpCircleOutlined/>}> login
+</ButtonComponent> */}
 
 
-const ButtonComponent=({icon,text,className,onclick,}:btnComponent)=>{
-    const style={
-        display:"flex",
-        alignItems:'center',
-    }
+
+const style={
+    display:"flex",
+    alignItems:'center',
+    justifyContent:'center',
+    width:"auto",
+    height:'auto',
+    padding:'0.6rem',
+    background:"#5A55D2",
+}
+const ButtonComponent=({className,onclick,icon,text}:btnComponent)=>{
     return (
-        <Button  style={style} 
+        <Button
+        style={style} 
         className={className? `btn-component-${className}`:"btn-component"} 
-        onClick={onclick}>
-            {icon?<span>{icon}</span>:null}
-            {text?<span>{text}</span>:null} 
+        onClick={onclick}
+        icon={icon?icon:null}>
+            {text?text:null}
         </Button>
     )
 }
