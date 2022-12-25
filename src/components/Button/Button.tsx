@@ -4,6 +4,7 @@ interface btnComponent{
     onclick:any,
     icon:any,
     text:string,
+    background:string,
 }
 {/* <ButtonComponent 
 className='login'
@@ -13,23 +14,24 @@ icon={<UpCircleOutlined/>}> login
 
 
 
-const style={
-    display:"flex",
-    alignItems:'center',
-    justifyContent:'center',
-    width:"auto",
-    height:'auto',
-    padding:'0.6rem',
-    background:"#5A55D2",
-}
-const ButtonComponent=({className,onclick,icon,text}:btnComponent)=>{
+const ButtonComponent=({className,onclick,icon,text,background}:btnComponent)=>{
+    const style={
+        display:"flex",
+        alignItems:'center',
+        justifyContent:'center',
+        width:"auto",
+        height:'auto',
+        padding:'0.6rem',
+        background:background=='violet' ? '#5A55D2':"#FFFFFF",
+        color:background=='violet' ? '#ffffff' :"#575C76",
+    }
     return (
         <Button
-        style={style} 
-        className={className? `btn-component-${className}`:"btn-component"} 
-        onClick={onclick}
-        icon={icon?icon:null}>
-            {text?text:null}
+            style={style} 
+            className={className? `btn-component-${className}`:"btn-component"} 
+            onClick={onclick}
+            icon={icon?icon:null}>
+                {text?text:null}
         </Button>
     )
 }

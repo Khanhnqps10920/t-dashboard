@@ -29,15 +29,6 @@ export const Login = () => {
               <Input type='password' placeholder='Enter your password'></Input>
             </div>
             <Button className="login__btn">Login</Button>
-
-
-
-            <ButtonComponent className='login' onclick={()=>{console.log('dasdas')}} icon={<UpCircleOutlined/>} text='Login'/>
-          
-          
-          
-          
-          
           </Form>
         </div>
       </div>
