@@ -1,7 +1,7 @@
 import { Button } from "antd";
-interface btnComponent{
+interface Propsbtn{
     className:string,
-    onclick:any,
+    onclick:()=>void,
     icon:any,
     text:string,
     background:string,
@@ -15,7 +15,7 @@ icon={<UpCircleOutlined/>}> login
 
 
 
-const ButtonComponent=({className,onclick,icon,text,background}:btnComponent)=>{
+const CustomBTN=({className,onclick,icon,text,background}:Propsbtn)=>{
     const style={
         display:"flex",
         alignItems:'center',
@@ -29,11 +29,11 @@ const ButtonComponent=({className,onclick,icon,text,background}:btnComponent)=>{
     return (
         <Button
             style={style} 
-            className={className? `btn-component-${className}`:"btn-component"} 
+            className={className? `btn-${className}`:"btn-component"} 
             onClick={onclick}
             icon={icon?icon:null}>
                 {text?text:null}
         </Button>
     )
 }
-export default ButtonComponent;
+export default CustomBTN;
