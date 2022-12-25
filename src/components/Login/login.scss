@@ -14,7 +14,7 @@
         padding: 7.2rem 0rem;
         width: 100rem;
         height: 60rem;
-        background: #FFFFFF;
+        background: $Theme-White;
         /* Colors/Primary White */
         border-radius: 1.6rem;
 
@@ -38,6 +38,7 @@
             width: 50rem;
             height: 45.6rem;
             border-left: 0.1rem solid $Boder-Left-Color;
+            position: relative;
 
             .logo {
                 display: flex;
@@ -65,7 +66,7 @@
                     /* identical to box height */
                     letter-spacing: 0.016em;
                     /* Stroke 2nd */
-                    color: #1A1E29;
+                    color: $Text-Login-Logo;
                 }
             }
 
@@ -74,43 +75,27 @@
     }
 
     &__input {
-        display: flex;
-        margin-bottom: 2rem;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0rem;
+        padding-bottom: 0.6rem;
         width: 32.8rem;
         height: 5.8rem;
+        margin-bottom: 4rem;
 
-        &__label {
-            width: 32.8rem;
-            height: 1.2rem;
-            margin: 1rem 0;
+
+        .ant-form-item-no-colon {
             font-family: 'Poppins';
-            font-style: normal;
             font-weight: 500;
-            font-size: 1.2rem;
             line-height: 1.8rem;
-            display: flex;
-            align-items: center;
             letter-spacing: 0.05rem;
-            /* Primary / Dark * 500 */
-            color: $Input-Text-Color;
         }
 
-        .login__input input {
-            box-sizing: border-box;
-            /* Auto layout */
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+        &__field {
             padding: 0.8rem 1.6rem;
-            width: 32.8rem;
             height: 4rem;
-            background: #FFFFFF;
             border: 0.1rem solid $Boder-Input-Color;
             border-radius: 0.6rem;
         }
+
+
     }
 
     &__btn {
@@ -119,11 +104,32 @@
         justify-content: center;
         align-items: center;
         padding: 1rem 3.2rem;
-        color: #FFFFFF;
+        color: $Theme-White;
         width: 32.8rem;
         height: 3.5rem;
-        background: #5A55D2;
+        background: $Theme-Color-Blue;
         border-radius: 0.6rem;
         margin-top: 3rem;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    &__error {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $Bg-Error-Login-Color;
+        width: 32.8rem;
+        height: 3.5rem;
+        border-radius: 0.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: $Text-Color-DarkGrey;
     }
 }

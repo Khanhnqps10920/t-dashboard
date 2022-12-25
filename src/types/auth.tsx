@@ -14,6 +14,7 @@ export interface AuthContextValues {
   identity?: UserIdentity | null;
   error?: Error;
   authProvider: AuthProvider;
+  logOut: () => void;
   setAuthState: (
     authenticated: boolean,
     identity?: UserIdentity | null
