@@ -7,7 +7,8 @@ interface btnComponent{
     background:string,
 }
 {/* <ButtonComponent 
-className='login'
+className='login' 
+background='violet'
  onclick={()=>{console.log('dasdas')}} 
 icon={<UpCircleOutlined/>}> login
 </ButtonComponent> */}
