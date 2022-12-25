@@ -1,10 +1,12 @@
+@import '../../../../Variable.scss';
+
 .header {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 18px 24px;
+    padding: 1.8rem 2.4rem;
     font-family: 'Poppins';
-    background-color: #fff;
+    background-color: $Theme-White;
 
     &__left {
         margin-right: auto;
@@ -16,7 +18,7 @@
 
         .date {
             font-size: 1.1rem;
-            color: #707EAE;
+            color: $Date-Text-Color;
         }
     }
 
@@ -26,26 +28,26 @@
         .search-icon {
             position: absolute;
             top: 50%;
-            left: 12px;
-            width: 24px;
-            height: 24px;
+            left: 1.2rem;
+            width: 2.4rem;
+            height: 2.4rem;
             transform: translateY(-50%);
         }
 
         .search-input {
             border: none;
-            border-radius: 8px;
-            padding: 12px 50px 12px 0px;
-            text-indent: 50px;
+            border-radius: .8rem;
+            padding: 1.2rem 5.0rem 1.2rem .0rem;
+            text-indent: 5.0rem;
             max-width: 40rem;
             width: 20vw;
             min-width: 20rem;
             font-size: 1.4rem;
-            background-color: #fff;
+            background-color: $Theme-White;
             outline: none;
 
             &::placeholder {
-                color: #AEB6CF;
+                color: $Search-Placeholder-Color;
                 font-size: 1.4rem;
             }
         }
@@ -58,14 +60,14 @@
         .name--left {
             font-size: 1.6rem;
             font-weight: 500;
-            margin-left: 20px;
-            margin-right: 8px;
+            margin-left: 2.0rem;
+            margin-right: .8rem;
         }
 
         .user-photo {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 1.2rem;
         }
     }
 

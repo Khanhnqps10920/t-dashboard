@@ -1,3 +1,5 @@
+@import '../../../../Variable.scss';
+
 .notifs {
     display: flex;
     align-items: center;
@@ -6,25 +8,25 @@
 
     &__wrapper {
         position: relative;
-        width: 24px;
-        height: 24px;
+        width: 2.4rem;
+        height: 2.4rem;
 
         &__active-icon {
-            width: 8px;
-            height: 8px;
-            background-color: #F23985;
+            width: .8rem;
+            height: .8rem;
+            background-color: $Notifs-active-Dot-Color;
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            right: 2px;
+            top: .2rem;
+            right: .2rem;
         }
     }
 
     &.dashboard {
-        width: 48px;
-        height: 48px;
-        background-color: #fff;
-        border-radius: 8px;
+        width: 4.8rem;
+        height: 4.8rem;
+        background-color: $Theme-White;
+        border-radius: .8rem;
     }
 
 }

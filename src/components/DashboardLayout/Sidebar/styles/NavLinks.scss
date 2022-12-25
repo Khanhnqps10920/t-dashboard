@@ -8,19 +8,19 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
     width: 100%;
-    padding: 12px 0px;
+    padding: 1.2rem 0;
 
     &__icon__wrapper {
-        margin-right: 12px;
+        margin-right: 1.2rem;
     }
 
     &__text {
         font-size: 1.8rem;
         font-family: "Gilroy";
         font-weight: normal;
-        margin-right: 8px;
+        margin-right: 0.8rem;
     }
 
     &.active {
@@ -29,15 +29,15 @@
         }
 
         .active-dot {
-            width: 8px;
-            height: 8px;
+            width: 0.8rem;
+            height: 0.8rem;
             background-color: $Theme-Color-Green;
             border-radius: 50%;
         }
     }
 
     &.dashboard {
-        margin-bottom: 16px;
+        margin-bottom: 1.6rem;
     }
 
 }

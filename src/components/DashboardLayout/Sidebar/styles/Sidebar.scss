@@ -1,16 +1,18 @@
+@import '../../../../Variable.scss';
+
 .sidebar {
     position: relative;
     height: 100vh;
     width: 30rem;
-    padding: 22px 28px 34px;
+    padding: 2.2rem 2.8rem 3.4rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
-    background-color: #fff;
+    box-shadow: 0.4rem 0.4rem 4rem $Sidebar-Shadow-Color;
+    background-color: $Theme-White;
 
     &.dashboard {
         width: 25.5rem;
-        padding-left: 40px;
-        padding-right: 50px;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
