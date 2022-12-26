@@ -11,7 +11,7 @@ export const authProvider: AuthProvider = {
         password,
       }
       const response = await authAxios.post('/auth/login', userInfo);
-      const accessToken = 'Bearer ' + response.data['access_token']
+      const accessToken = response.data['access_token']
       localStorage.setItem('accessToken', accessToken);
     } catch (err) {
       throw err
@@ -33,16 +33,13 @@ export const authProvider: AuthProvider = {
   },
   getIdentity: async (): Promise<UserIdentity | null> => {
     // call api get profile
-    if (localStorage.getItem('accessToken')) {
-      try {
-        const response = await authAxios.get('/me');
-        const data = response.data;
-        return data
-      } catch (err) {
-        return null
-      }
+    try {
+      const response = await authAxios.get('/me');
+      const data = response.data;
+      return data
+    } catch (err) {
+      return null
     }
-    return null;
   },
 };
 
