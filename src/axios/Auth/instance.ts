@@ -13,9 +13,7 @@ export default authAxios
 authAxios.interceptors.request.use((config) => {
     config.headers = {
         ...config.headers,
-        'Authorization': localStorage.getItem('accessToken')
-            ? localStorage.getItem('accessToken')
-            : ''
+        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
     }
     return config
 }, (error) => {
