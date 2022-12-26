@@ -4,8 +4,6 @@ import { Button, Form, Input } from 'antd'
 import '../Login/login.scss'
 import logo from '../../assets/image/login-logo.png'
 import loginImage from '../../assets/image/login-image.png'
-import CustomBTN from '../Button/Button';
-import { UpCircleOutlined } from '@ant-design/icons';
 export const Login = () => {
   console.log('login page');
   return (

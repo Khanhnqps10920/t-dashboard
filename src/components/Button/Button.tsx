@@ -1,21 +1,14 @@
 import { Button } from "antd";
 interface Propsbtn{
-    className:string,
-    onclick:()=>void,
-    icon:any,
     text:string,
     background:string,
+    propsANT:{},
 }
-{/* <ButtonComponent 
-className='login' 
-background='violet'
- onclick={()=>{console.log('dasdas')}} 
-icon={<UpCircleOutlined/>}> login
-</ButtonComponent> */}
 
 
 
-const CustomBTN=({className,onclick,icon,text,background}:Propsbtn)=>{
+
+const CustomBTN=({text,background,propsANT}:Propsbtn)=>{
     const style={
         display:"flex",
         alignItems:'center',
@@ -27,13 +20,7 @@ const CustomBTN=({className,onclick,icon,text,background}:Propsbtn)=>{
         color:background=='violet' ? '#ffffff' :"#575C76",
     }
     return (
-        <Button
-            style={style} 
-            className={className? `btn-${className}`:"btn-component"} 
-            onClick={onclick}
-            icon={icon?icon:null}>
-                {text?text:null}
-        </Button>
+        <Button style={style}{...propsANT}>{text?text:null}</Button>
     )
 }
 export default CustomBTN;
