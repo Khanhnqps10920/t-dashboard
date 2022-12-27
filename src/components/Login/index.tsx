@@ -107,7 +107,7 @@ export const Login = () => {
             onFinish={onLogin}
             onFieldsChange={onFieldChange}>
             {renderedFormItem}
-            <Button htmlType='submit' className="login__btn">Login</Button>
+            <Button disabled={!canSubmit} htmlType='submit' className="login__btn">Login</Button>
           </Form>
           {loginError && <div className="login__error">{loginError}</div>}
         </div>
