@@ -1,0 +1,43 @@
+@import '../../../../Variable';
+
+.nav-link__container {
+    width: 100%;
+}
+
+.nav-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    padding: 1.2rem 0;
+
+    &__icon__wrapper {
+        margin-right: 1.2rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-family: "Gilroy";
+        font-weight: normal;
+        margin-right: 0.8rem;
+    }
+
+    &.active {
+        .nav-link__text {
+            color: $Text-Color-Green
+        }
+
+        .active-dot {
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: $Theme-Color-Green;
+            border-radius: 50%;
+        }
+    }
+
+    &.dashboard {
+        margin-bottom: 1.6rem;
+    }
+
+}

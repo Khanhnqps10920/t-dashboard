@@ -24,6 +24,12 @@ $Text-Font-size-large: 2.1rem;
 $Text-Font-size-Medium: 1.6rem;
 $Text-Font-size-Small: 1.2rem;
 $Text-Font-size-Smallest: 1rem;
+// sidebar
+$Border-Color: #E4E7ED;
+$Sidebar-Shadow-Color: rgba(0, 0, 0, 0.06);
+$Date-Text-Color: #707EAE;
+$Search-Placeholder-Color: #AEB6CF;
+$Notifs-active-Dot-Color: #F23985;
 
 @mixin button-Needed {
     width: 13rem;

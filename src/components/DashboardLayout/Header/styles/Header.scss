@@ -1,0 +1,92 @@
+@import '../../../../Variable.scss';
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.8rem 2.4rem;
+    font-family: 'Poppins';
+    background-color: $Theme-White;
+
+    &__left {
+        margin-right: auto;
+
+        .hello {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .date {
+            font-size: 1.1rem;
+            color: $Date-Text-Color;
+        }
+    }
+
+    &__center {
+        position: relative;
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 1.2rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            transform: translateY(-50%);
+        }
+
+        .search-input {
+            border: none;
+            border-radius: .8rem;
+            padding: 1.2rem 5.0rem 1.2rem .0rem;
+            text-indent: 5.0rem;
+            max-width: 40rem;
+            width: 20vw;
+            min-width: 20rem;
+            font-size: 1.4rem;
+            background-color: $Theme-White;
+            outline: none;
+
+            &::placeholder {
+                color: $Search-Placeholder-Color;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        .name--left {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-left: 2.0rem;
+            margin-right: .8rem;
+        }
+
+        .user-photo {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 1.2rem;
+        }
+    }
+
+    &.dashboard {
+        background-color: transparent;
+        justify-content: space-between;
+
+        .header__left {
+            margin-right: unset;
+
+            .hello {
+                font-size: 2.4rem;
+            }
+
+            .date {
+                font-size: 1.4rem;
+            }
+        }
+
+
+    }
+}

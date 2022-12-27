@@ -1,0 +1,54 @@
+@import '../../../../Variable.scss';
+
+@mixin bold-white {
+    font-weight: bold;
+    color: $Theme-White;
+}
+
+.dashboard-banner {
+    font-family: "Gilroy";
+    position: absolute;
+    width: 21.6rem;
+    height: 26.9rem;
+    left: 1.95rem;
+    bottom: 3.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $Theme-Color-Green;
+    border-radius: 1.6rem;
+
+    .icon__wrapper {
+        margin-top: 2.7rem;
+        background-color: $Theme-White;
+        width: 7.2rem;
+        height: 7.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        .icon__img__wrapper {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    .safe-text {
+        font-size: 2rem;
+        margin-top: .8rem;
+        @include bold-white;
+    }
+
+    .security-text {
+        font-size: 1.2rem;
+        margin-top: 1.6rem;
+        font-weight: normal;
+    }
+
+    .privacy-text {
+        font-size: 1.8rem;
+        margin-top: 1.7rem;
+        @include bold-white;
+    }
+}
