@@ -14,6 +14,8 @@
 
     &__icon__wrapper {
         margin-right: 1.2rem;
+        font-size: 2.2rem;
+        color: $Theme-Dark;
     }
 
     &__text {
@@ -21,12 +23,20 @@
         font-family: "Gilroy";
         font-weight: normal;
         margin-right: 0.8rem;
+        color: $Theme-Dark;
     }
 
     &.active {
         .nav-link__text {
             color: $Text-Color-Green
         }
+
+        .nav-link {
+            &__icon__wrapper {
+                color: $Text-Color-Green;
+            }
+        }
+
 
         .active-dot {
             width: 0.8rem;
