@@ -25,7 +25,7 @@ export interface IFileType {
 export interface ITextBox {
     title: string,
     placeholder: string,
-};
+}; 
 
 // Normal Input
 export interface IInput{

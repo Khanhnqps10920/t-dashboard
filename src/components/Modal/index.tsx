@@ -130,4 +130,4 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
     </Modal>);
 }
 
-export default CustomModal;
+export default CustomModal; 
