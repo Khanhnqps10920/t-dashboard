@@ -6,5 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 8000
-  }
+  },
+  resolve: {
+    alias: [
+        {
+            // this is required for the SCSS modules
+            find: /^~(.*)$/,
+            replacement: '$1',
+        },
+    ],
+},
 })
