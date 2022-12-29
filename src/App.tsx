@@ -18,23 +18,23 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <AuthContextProvider authProvider={authProvider}> */}
-      <Routes>
-        <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
-          <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
-            <Route index element={<Home />} />
-            <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
-            <Route path={pages.PRODUCT} element={<ProductPage />}></Route>
-            <Route path={pages.ODER} element={<OderPage />}></Route>
-            <Route path={'/test'} element={<TestPage />} />
+      <AuthContextProvider authProvider={authProvider}>
+        <Routes>
+          <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
+            <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
+              <Route index element={<Home />} />
+              <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
+              <Route path={pages.PRODUCT} element={<ProductPage />}></Route>
+              <Route path={pages.ODER} element={<OderPage />}></Route>
+              <Route path={'/test'} element={<TestPage />} />
+            </Route>
           </Route>
-        </Route>
 
-        <Route path={pages.LOGIN} element={<PublicRoute />}>
-          <Route index element={<Login />} />
-        </Route>
-      </Routes>
-      {/* </AuthContextProvider> */}
+          <Route path={pages.LOGIN} element={<PublicRoute />}>
+            <Route index element={<Login />} />
+          </Route>
+        </Routes>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 }

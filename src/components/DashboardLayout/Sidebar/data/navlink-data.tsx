@@ -1,35 +1,29 @@
 export type LINK_DATA_Type = {
     icon: JSX.Element,
-    icon_active: JSX.Element,
     text: string,
     path: string
 }
 import { pages } from '../../../../utils/constant'
-import { FaHome } from "react-icons/fa";
-import { AiFillRead, AiOutlineTeam, AiTwotoneFire } from "react-icons/ai";
+import { HomeOutlined, MailOutlined, FireOutlined, TeamOutlined } from '@ant-design/icons';
 const LINK_DATA: LINK_DATA_Type[] = [
     {
-        icon: <FaHome></FaHome>,
-        icon_active: <FaHome></FaHome>,
+        icon: <HomeOutlined />,
         text: 'Home',
         path: pages.DASHBOARD,
     },
     {
-        icon: <AiFillRead></AiFillRead>,
-        icon_active: <AiFillRead></AiFillRead>,
+        icon: <MailOutlined />,
         text: 'Categories',
         path: pages.CATEGORIES,
     },
     {
-        icon: <AiOutlineTeam></AiOutlineTeam>,
-        icon_active: <AiOutlineTeam></AiOutlineTeam>,
+        icon: <TeamOutlined />,
         text: 'Product',
         path: pages.PRODUCT,
     },
     {
-        icon: <AiTwotoneFire></AiTwotoneFire>,
-        icon_active: <AiTwotoneFire></AiTwotoneFire>,
-        text: 'Oder',
+        icon: <FireOutlined />,
+        text: 'Oders',
         path: pages.ODER,
     },
 ]

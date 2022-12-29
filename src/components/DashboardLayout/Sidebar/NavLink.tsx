@@ -19,7 +19,7 @@ const NavLink = ({ link, active = false, onClick }: NavLinkPropType) => {
         <Link to={link.path}>
             <li onClick={onClick} className={`nav-link ${active && 'active'} ${type}`}>
                 <div className="nav-link__icon__wrapper">
-                    {active ? link.icon_active : link.icon}
+                    {link.icon}
                 </div>
 
                 <span className='nav-link__text'>
