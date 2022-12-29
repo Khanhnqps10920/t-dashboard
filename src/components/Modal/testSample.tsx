@@ -7,14 +7,24 @@ import IModal from "./typesModal"
 
 const modalProps : IModal = {
     mainTitle: 'Sample Modal',
+    normalInput: [
+        {
+            title: 'Input Title',
+            placeholder: 'ko biet ghi gi'
+        },
+        {
+            title: 'Input Title',
+            placeholder: 'ko biet ghi gi'
+        },
+    ],
     selectInput: [
         {
             title: 'text',
-            options: [{ value: 'Hung', label: 'Hung' }, { value: 'Hung', label: 'Hung' }, { value: 'Hung', label: 'Hung' }]
+            options: [{ value: 'Hung', label: 'Hung' }, { value: 'BK', label: 'BK' }, { value: 'SP', label: 'SP' }]
         },
         {
             title: 'text',
-            options: [{ value: 'Hung', label: 'Hung' }, { value: 'Hung', label: 'Hung' }, { value: 'Hung', label: 'Hung' }]
+            options: [{ value: 'IdolKDB', label: 'IdolKDB' }, { value: 'GOAT', label: 'GOAT' }, { value: 'LeBron', label: 'LeBron' }]
         },
     ],
     dateInput: [
@@ -37,6 +47,16 @@ const modalProps : IModal = {
             type: '.png,.jpeg,.jpg,.docx'
         },
     ],
+    additionalInput:[
+        {
+            title: 'Additional Title',
+            placeholder: 'ko biet ghi gi'
+        },
+        {
+            title: 'Additional Title',
+            placeholder: 'ko biet ghi gi'
+        },
+    ],
     textInput: [
         {
             title: 'Text Title',
@@ -44,16 +64,6 @@ const modalProps : IModal = {
         },
         {
             title: 'Text Title',
-            placeholder: 'ko biet ghi gi'
-        },
-    ],
-    normalInput: [
-        {
-            title: 'Input Title',
-            placeholder: 'ko biet ghi gi'
-        },
-        {
-            title: 'Input Title',
             placeholder: 'ko biet ghi gi'
         },
     ],

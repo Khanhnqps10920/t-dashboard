@@ -1,0 +1,50 @@
+@import '../../Variable.scss';
+
+.Modal{
+    padding: 2rem;
+
+    &__title{
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    };
+    &__line {
+        height: 0.1rem;
+        background-color: #D6E4EC;
+        margin: 1rem 0;
+    };
+    &__labelForm{
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        color: #343C44;
+
+    };
+    &__file{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &__img{
+            width: 3.6rem;
+            height: 3.6rem;
+        };
+        &__content{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        };
+    };
+    &__button{
+        background-color: $Theme-Color-Blue;
+        color: white;
+        border: none;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+    };
+}

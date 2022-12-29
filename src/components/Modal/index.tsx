@@ -1,13 +1,19 @@
 //import ant design
-import { Button, DatePicker, DatePickerProps, Input, Modal, Select } from "antd";
+import { Button, DatePicker, DatePickerProps, Form, Input, Modal, Select } from "antd";
 import { message, Upload, UploadFile } from "antd";
 import { UploadChangeParam } from "antd/es/upload";
 
 //import interface
-import IModal from "./typesModal";
+import IModal, { IDate, IFileType, IInput, ITextBox, ISelectInput } from "./typesModal";
 
 //import image
-import exportIMG from '../../assets/image/export.png'
+import exportIMG from '../../assets/export.png'
+import closeIconImg from '../../assets/CloseIcon.jpg'
+import vectorImg from '../../assets/Vector.png'
+import pickerImg from '../../assets/Picker.jpg'
+
+//import style
+import './modal.scss'
 
 interface IProps {
     modalProps: IModal,
@@ -23,15 +29,19 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
     }
 
     //Select logic
-    const renderSelect = () => {
-        return modalProps.selectInput?.map(element=>{
+    const renderSelect = (contentArray: ISelectInput[] | null) => {
+        return contentArray?.map((element,index)=>{
             //Title need to be implemented
-             return <Select 
-                defaultValue={element.options[0].value} 
-                options={element.options} 
-                
-                onChange={(value)=>{handleChange(value)}}
-            />
+             return (
+            <Form.Item className="Modal__labelForm" key={`select-${index}`}>
+                <label>{element.title}</label>
+                <Select 
+                    defaultValue={element.options[0].value} 
+                    options={element.options} 
+                    onChange={(value)=>{handleChange(value)}}
+                    suffixIcon = {<img src={vectorImg}/>}
+                />
+            </Form.Item>)
         });
     }
 
@@ -41,14 +51,21 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
     }
     //format date
     const dateFormat = 'DD/MM/YYYY';
-    const renderDate = () => {
-        return modalProps.dateInput?.map(element=>{
+    const renderDate = (contentArray: IDate[] | null) => {
+        return contentArray?.map((element,index)=>{
             //Title need to be implemented
-            return <DatePicker 
-            onChange={(date,dateString)=>{handleChangeDate(date,dateString)}} 
-            format={dateFormat} 
-            placeholder = {element.placeholder}
-            />
+            return (
+            <Form.Item className="Modal__labelForm" key={`date-${index}`}>
+                <label>{element.title}</label>
+                < br/>
+                <DatePicker 
+                style={{width: '100%'}}
+                onChange={(date,dateString)=>{handleChangeDate(date,dateString)}} 
+                format={dateFormat} 
+                placeholder = {element.placeholder}
+                suffixIcon={<img src={pickerImg}/>}
+                />
+            </Form.Item>)
         });
     }
 
@@ -65,18 +82,25 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
         }
     }
 
-    const renderFile = () =>{
-        return modalProps.fileInput?.map(element=>{
-            return <Upload 
-                name="file"
-                type="drag"
-                accept={element.type}
-                multiple = {true}
-                onChange={(info)=>{handleChangeFile(info)}}
-            >
-                <div className="file__img"><img src={exportIMG} alt="export image" /></div>
-                <div className="file__content">Drag image or browse to <span style={{color: "#FF69A5"}}>select file</span></div>
-            </Upload>
+    const renderFile = (contentArray: IFileType[] | null) =>{
+        return contentArray?.map((element,index)=>{
+            return (
+            <Form.Item className="Modal__labelForm" key={`file-${index}`}>
+                <label>{element.title}</label>
+                <Upload 
+                    name="file"
+                    type="drag"
+                    accept={element.type}
+                    multiple = {true}
+                    action=""
+                    onChange={(info)=>{handleChangeFile(info)}}
+                >   
+                    <div className="Modal__file">
+                        <div className="Modal__file__img"><img src={exportIMG} alt="export image" /></div>
+                        <div className="Modal__file__content">Drag image or browse to <span style={{color: "#FF69A5"}}>select file</span></div>
+                    </div>
+                </Upload>
+            </Form.Item>)
         });
     }
 
@@ -86,28 +110,38 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
         const {name, value} = event.target;
         console.log(name,value);
     }
-    const renderText = () =>{
-        return modalProps.textInput?.map(element=>{
-            return <TextArea 
-            placeholder={element.placeholder} 
-            name={element.title} 
-            onChange={(event)=>{handleChangeText(event)}}
-            />
+    const renderText = (contentArray: ITextBox[] | null) =>{
+        return contentArray?.map((element, index)=>{
+            return (
+            <Form.Item className="Modal__labelForm" key={`text-${index}`}>
+                <label>{element.title}</label>
+                <TextArea 
+                placeholder={element.placeholder} 
+                name={element.title} 
+                onChange={(event)=>{handleChangeText(event)}}
+                />
+            </Form.Item>)
         });
     }
 
     //Normal Input Logic
+    // const [indexInput, setIndexInput] = useState<number>(0);
     const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) =>{
         const { name, value } = event.target;
         console.log(name ,value);
     }
-    const renderInput = () =>{
-        return modalProps.normalInput?.map(element=>{
-            return <Input 
-            placeholder={element.placeholder} 
-            name={element.title} 
-            onChange={event=>{handleChangeInput(event)}}
-            />
+    const renderInput = (contentArray: IInput[] | null) =>{
+        return contentArray?.map((element,index)=>{
+            // setIndexInput(indexInput + 1);
+            return (
+                <Form.Item className="Modal__labelForm" key={`input-${index}`}>
+                <label>{element.title}</label>
+                <Input 
+                placeholder={element.placeholder} 
+                name={element.title} 
+                onChange={event=>{handleChangeInput(event)}}
+                />
+                </Form.Item>)
         });
     }
 
@@ -115,18 +149,24 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
     return (
     <Modal
         open={isOpen}
-        title={modalProps.mainTitle}
+        className="Modal"
         onOk={()=>{setIsOpen(false)}}
         onCancel={()=>{setIsOpen(false)}}
         footer={[
-            <Button key={modalProps.buttonContent} type="primary" onClick={()=>{setIsOpen(false)}}>{modalProps.buttonContent}</Button>
+            <Button key={modalProps.buttonContent} className="Modal__button" onClick={()=>{setIsOpen(false)}}>{modalProps.buttonContent}</Button>
         ]} // Custom Button
-    >
-        {renderSelect()}
-        {renderDate()}
-        {renderFile()}
-        {renderText()}
-        {renderInput()}
+        closeIcon = {<img style={{height: '1rem', width: '1rem'}} src= {closeIconImg}/>}
+    >   
+    <div className="Modal__title">{modalProps.mainTitle}</div>
+    <div className="Modal__line"></div>
+        <Form>
+            {renderInput(modalProps.normalInput)}
+            {renderSelect(modalProps.selectInput)}
+            {renderDate(modalProps.dateInput)}
+            {renderFile(modalProps.fileInput)}
+            {renderInput(modalProps.additionalInput)}
+            {renderText(modalProps.textInput)}
+        </Form>
     </Modal>);
 }
 

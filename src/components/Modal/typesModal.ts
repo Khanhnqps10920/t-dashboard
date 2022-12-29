@@ -1,5 +1,11 @@
+// Normal Input
+export interface IInput{
+    title: string,
+    placeholder: string,
+};
+
 // Select Box
-interface ISelectInput{
+export interface ISelectInput{
     title: string,
     options: IOptions[],
 }
@@ -27,19 +33,14 @@ export interface ITextBox {
     placeholder: string,
 }; 
 
-// Normal Input
-export interface IInput{
-    title: string,
-    placeholder: string,
-};
-
 // Final Modal
 export default interface IModal {
     mainTitle: string | null,
+    normalInput: Array<IInput> | null,
     selectInput: Array<ISelectInput> | null,
     dateInput: Array<IDate> | null,
     fileInput: Array<IFileType> | null ,
+    additionalInput: Array<IInput> | null,
     textInput: Array<ITextBox> | null,
-    normalInput: Array<IInput> | null,
     buttonContent: string | null,
 };
