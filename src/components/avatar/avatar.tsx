@@ -1,7 +1,8 @@
-// demo:<Avatar email="admin@gmail.com"/>
+// demo:<Avatar email="admin@gmail.com" size='large'/>
 import "./avatar.scss"
-const Avatar=({email=''})=>{
-    return <div className="e-avatar">
+const Avatar=({email='',size=''})=>{
+   
+    return <div className={`e-avatar-${size}`}>
         {email.slice(0,2).toUpperCase()}
     </div>
 }
