@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLocation, Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../../contexts/Auth';
 import { pages } from '../../utils/constant';
 
@@ -8,7 +8,6 @@ export const PrivateRoute = () => {
   const { authenticated, identity, loading } = useAuth();
 
   // handle check identity and redirect later
-  const location = useLocation();
   // check auth and redirect
   if (!loading && !authenticated) {
     return <Navigate to={pages.LOGIN} />;
