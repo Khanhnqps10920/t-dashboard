@@ -1,7 +1,7 @@
 //import ant design
 import { Button, DatePicker, DatePickerProps, Form, Input, Modal, Select } from "antd";
 import { message, Upload, UploadFile } from "antd";
-import { UploadChangeParam } from "antd/es/upload";
+import { UploadChangeParam, UploadProps } from "antd/es/upload";
 
 //import interface
 import IModal, { IDate, IFileType, IInput, ITextBox, ISelectInput } from "./typesModal";
@@ -70,36 +70,60 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen } : IProps) => {
     }
 
     //File Logic
-    const handleChangeFile = (info : UploadChangeParam<UploadFile<any>>) =>{
-        const { status } = info.file;
-        if (status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (status === 'done') {
-            message.success(`${info.file.name} file uploaded successfully.`);
-        } else if (status === 'error') {
-            message.error(`${info.file.name} file upload failed.`);
-        }
+    const { Dragger } = Upload;
+    const dummyRequest = ({onSuccess}: any) => {
+        setTimeout(()=>{
+            onSuccess('done');
+        },0);
     }
+
+    const fileProps: UploadProps = {
+        name: 'file',
+        multiple: true,
+        customRequest: dummyRequest,
+        onChange(info: UploadChangeParam<UploadFile<any>>){
+            const { status } = info.file;
+            if (status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully.`);
+            } else if (status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
+        },
+        onDrop(event: React.DragEvent<HTMLDivElement>) {
+            console.log('Dropped files', event.dataTransfer.files);
+        },
+    };
 
     const renderFile = (contentArray: IFileType[] | null) =>{
         return contentArray?.map((element,index)=>{
             return (
             <Form.Item className="Modal__labelForm" key={`file-${index}`}>
                 <label>{element.title}</label>
-                <Upload 
-                    name="file"
-                    type="drag"
-                    accept={element.type}
-                    multiple = {true}
-                    action=""
-                    onChange={(info)=>{handleChangeFile(info)}}
+                <Dragger 
+                    {...fileProps}
+                    beforeUpload={(file)=>{
+                        const name = file.name;
+                        let checkExist = false;
+                        for (const type of element.type) {
+                            if(name.includes(type)){
+                                checkExist = name.includes(type);
+                            break;
+                            }
+                        }
+                        if(!checkExist){     
+                            message.error(`${name} is not an accepted type of file`);
+                        }
+                        return checkExist || Upload.LIST_IGNORE;
+                    }}
                 >   
                     <div className="Modal__file">
                         <div className="Modal__file__img"><img src={exportIMG} alt="export image" /></div>
                         <div className="Modal__file__content">Drag image or browse to <span style={{color: "#FF69A5"}}>select file</span></div>
                     </div>
-                </Upload>
+                </Dragger>
             </Form.Item>)
         });
     }

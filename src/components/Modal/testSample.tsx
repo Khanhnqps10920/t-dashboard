@@ -27,24 +27,15 @@ const modalProps : IModal = {
             options: [{ value: 'IdolKDB', label: 'IdolKDB' }, { value: 'GOAT', label: 'GOAT' }, { value: 'LeBron', label: 'LeBron' }]
         },
     ],
-    dateInput: [
-        {
-            title: 'Birthday',
-            placeholder: 'mm/dd/yy'
-        },
-        {
-            title: 'Your Grandma Birthday :>',
-            placeholder: 'mm/dd/yy'
-        }
-    ],
+    dateInput: null,
     fileInput: [
         {
             title: 'Drag your file here',
-            type: '.png,.jpeg,.jpg,.docx'
+            type: ['.png','.jpeg','.jpg','.docx']
         },
         {
             title: 'Drag your file here',
-            type: '.png,.jpeg,.jpg,.docx'
+            type: ['.png','.jpeg','.jpg','.docx']
         },
     ],
     additionalInput:[

@@ -4,9 +4,9 @@
     padding: 2rem;
 
     &__title{
-        font-family: 'Inter';
+        font-family: 'Inter', sans-serif;
         font-weight: 600;
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         line-height: 1.7rem;
     };
     &__line {
@@ -15,12 +15,11 @@
         margin: 1rem 0;
     };
     &__labelForm{
-        font-family: 'Poppins';
+        font-family: 'Poppins-Thin', sans-serif;
         font-weight: 600;
-        font-size: 1rem;
         margin-bottom: 1.2rem;
+        font-size: 1rem;
         color: #343C44;
-
     };
     &__file{
         display: flex;

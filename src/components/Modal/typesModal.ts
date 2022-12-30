@@ -24,7 +24,7 @@ export interface IDate{
 // File
 export interface IFileType {
     title: string,
-    type: string,
+    type: string[],
 }
 
 // Text Box
