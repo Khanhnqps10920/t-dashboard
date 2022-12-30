@@ -1,8 +1,10 @@
 import { createContext } from 'react';
 import { Outlet } from 'react-router-dom';
-import styled from 'styled-components'
+import { useAuth } from '../../contexts/Auth';
+import styled from 'styled-components';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import { FullPageLoading } from './FullPageLoading/FullPageLoading';
 
 /*
 Still to be Implemented:
@@ -11,51 +13,58 @@ Still to be Implemented:
   Actions for search input
 */
 
-
 type ContainerPropsType = {
-  column?: boolean
-}
+  column?: boolean;
+};
 const Container = styled.div<ContainerPropsType>`
-      display: flex;
-      flex-direction: ${props => props.column ? "column" : "row"};
-      flex:1;
+  display: flex;
+  flex-direction: ${(props) => (props.column ? 'column' : 'row')};
+  flex: 1;
+  background: url(/src/assets/image/back.png);
+  background-size: cover;
 `;
 
 type ContentPropsType = {
-  dashboard?: boolean
-}
+  dashboard?: boolean;
+};
 
 const Content = styled.div<ContentPropsType>`
-  flex:1;
-  padding: ${props => props.dashboard
-    ? "3px 32px"
-    : "38px 24px"};
+  flex: 1;
+  padding: ${(props) => (props.dashboard ? '3px 32px' : '38px 24px')};
 `;
 type DashBoardConfigType = {
-  type?: 'dashboard' | 'monitoring'
-}
+  type?: 'dashboard' | 'monitoring';
+};
 export const DashBoardContext = createContext<DashBoardConfigType>({
-  type: 'monitoring'
-})
+  type: 'monitoring',
+});
 
 type DashboardPropsType = {
-  type?: 'dashboard' | 'monitoring'
-}
+  type?: 'dashboard' | 'monitoring';
+};
 
-export const DashboardLayout = ({ type = 'monitoring' }: DashboardPropsType) => {
+export const DashboardLayout = ({
+  type = 'monitoring',
+}: DashboardPropsType) => {
+  const { logOut, loading } = useAuth();
+
   return (
-    <div>
-      <DashBoardContext.Provider value={{ type }}>
-        <Container>
-          <Sidebar />
-          <Container column>
-            <Header />
-            <Content dashboard={type === 'dashboard'}>
-              <Outlet />
-            </Content>
+    <>
+      {loading ? (
+        <FullPageLoading />
+      ) : (
+        <DashBoardContext.Provider value={{ type }}>
+          <Container>
+            <Sidebar />
+            <Container column>
+              <Header />
+              <Content dashboard={type === 'dashboard'}>
+                <Outlet />
+              </Content>
+            </Container>
           </Container>
-        </Container>
-      </DashBoardContext.Provider>
-    </div>
+        </DashBoardContext.Provider>
+      )}
+    </>
   );
 };

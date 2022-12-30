@@ -14,14 +14,15 @@ import { ProductPage } from './components/DashboardLayout/Sidebar/pages/Product'
 import { OderPage } from './components/DashboardLayout/Sidebar/pages/Oder';
 
 function App() {
-  const [count, setCount] = useState('');
-
   return (
     <BrowserRouter>
       <AuthContextProvider authProvider={authProvider}>
         <Routes>
           <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
-            <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
+            <Route
+              path={pages.DASHBOARD}
+              element={<DashboardLayout type="dashboard" />}
+            >
               <Route index element={<Home />} />
               <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
               <Route path={pages.PRODUCT} element={<ProductPage />}></Route>
