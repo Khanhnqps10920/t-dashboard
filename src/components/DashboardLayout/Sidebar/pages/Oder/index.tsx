@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const OderPage = () => {
-    return <div>OderPage</div>;
+export const OdersPage = () => {
+    return <div>OdersPage</div>;
 };

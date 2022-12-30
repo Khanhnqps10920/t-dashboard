@@ -11,7 +11,7 @@ import { DashboardLayout } from './components/DashboardLayout/DashboardLayout';
 import { TestPage } from './components/SamplePage';
 import { CategoriesPage } from './components/DashboardLayout/Sidebar/pages/Categories';
 import { ProductPage } from './components/DashboardLayout/Sidebar/pages/Product';
-import { OderPage } from './components/DashboardLayout/Sidebar/pages/Oder';
+import { OdersPage } from './components/DashboardLayout/Sidebar/pages/Oder';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
               <Route path={pages.PRODUCT} element={<ProductPage />}></Route>
-              <Route path={pages.ODER} element={<OderPage />}></Route>
+              <Route path={pages.ODER} element={<OdersPage />}></Route>
               <Route path={'/test'} element={<TestPage />} />
             </Route>
           </Route>
