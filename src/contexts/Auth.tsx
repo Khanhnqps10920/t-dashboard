@@ -18,10 +18,11 @@ export const AuthContext = React.createContext<AuthContextValues>({
   loading: true,
   authenticated: false,
   identity: null,
+  logOut: () => { },
   setAuthState: (
     _authenticated: boolean,
     _identity?: UserIdentity | null
-  ) => {},
+  ) => { },
 });
 
 export const useAuthContextProvider = (
@@ -39,6 +40,14 @@ export const useAuthContextProvider = (
     },
     []
   );
+
+  const logOut = React.useCallback(
+    () => {
+      localStorage.removeItem('accessToken');
+      setAuthenticated(false);
+      setIdentity(null);
+    }, []
+  )
 
   React.useEffect(() => {
     (async () => {
@@ -60,6 +69,7 @@ export const useAuthContextProvider = (
     identity,
     error,
     authProvider,
+    logOut,
     setAuthState,
   };
 };

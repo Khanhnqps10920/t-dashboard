@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 import { Outlet } from 'react-router-dom';
+import { useAuth } from '../../contexts/Auth';
 import styled from 'styled-components'
 import Sidebar from './Sidebar';
 import Header from './Header';
@@ -43,6 +44,8 @@ type DashboardPropsType = {
 }
 
 export const DashboardLayout = ({ type = 'monitoring' }: DashboardPropsType) => {
+  const { logOut } = useAuth();
+
   return (
     <div>
       <DashBoardContext.Provider value={{ type }}>
