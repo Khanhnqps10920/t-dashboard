@@ -11,14 +11,15 @@ import { DashboardLayout } from './components/DashboardLayout/DashboardLayout';
 import { TestPage } from './components/SamplePage';
 
 function App() {
-  const [count, setCount] = useState('');
-
   return (
     <BrowserRouter>
       <AuthContextProvider authProvider={authProvider}>
         <Routes>
           <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
-            <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
+            <Route
+              path={pages.DASHBOARD}
+              element={<DashboardLayout type="dashboard" />}
+            >
               <Route index element={<Home />} />
               <Route path={'/test'} element={<TestPage />} />
             </Route>

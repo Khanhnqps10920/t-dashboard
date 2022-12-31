@@ -102,17 +102,6 @@ export const Login = () => {
             <img className="logo__img" src={logo}></img>
             <div className="logo__text">ZARVIS</div>
           </div>
-          <Form layout="vertical" >
-            <div className="login__input">
-              <label className="login__input__label">Username</label>
-              <Input placeholder='Enter your username'></Input>
-            </div>
-            <div className="login__input">
-              <label className="login__input__label">Password</label>
-              <Input type='password' placeholder='Enter your password'></Input>
-            </div>
-            <Button className="login__btn" >Login</Button>
-          </Form>
           <Form layout="vertical"
             colon={false}
             onFinish={onLogin}
