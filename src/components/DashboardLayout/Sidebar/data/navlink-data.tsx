@@ -18,8 +18,8 @@ const LINK_DATA: LINK_DATA_Type[] = [
     },
     {
         icon: <TeamOutlined />,
-        text: 'Product',
-        path: pages.PRODUCT,
+        text: 'Products',
+        path: pages.PRODUCTS,
     },
     {
         icon: <FireOutlined />,

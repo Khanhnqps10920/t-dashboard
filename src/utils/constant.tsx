@@ -3,7 +3,7 @@ export const pages = {
   DASHBOARD: '/',
   CATEGORIES: '/categories',
   ODERS: '/oders',
-  PRODUCT: '/products'
+  PRODUCTS: '/products'
 };
 
 export const API_CONST = {
