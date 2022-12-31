@@ -24,7 +24,7 @@ const LINK_DATA: LINK_DATA_Type[] = [
     {
         icon: <FireOutlined />,
         text: 'Oders',
-        path: pages.ODER,
+        path: pages.ODERS,
     },
 ]
 
