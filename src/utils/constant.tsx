@@ -1,6 +1,9 @@
 export const pages = {
   LOGIN: '/login',
   DASHBOARD: '/',
+  CATEGORIES: '/categories',
+  ODERS: '/oders',
+  PRODUCTS: '/products'
 };
 
 export const API_CONST = {

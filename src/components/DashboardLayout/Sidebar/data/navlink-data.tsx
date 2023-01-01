@@ -1,49 +1,31 @@
 export type LINK_DATA_Type = {
     icon: JSX.Element,
-    icon_active: JSX.Element,
-    text: string
+    text: string,
+    path: string
 }
-import dashboardIconActive from '../../../../assets/image/dashboard-icon-active.svg'
-import dashboardIcon from '../../../../assets/image/dashboard-icon.svg'
-
+import { pages } from '../../../../utils/constant'
+import { HomeOutlined, MailOutlined, FireOutlined, TeamOutlined } from '@ant-design/icons';
 const LINK_DATA: LINK_DATA_Type[] = [
     {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive} />,
-        text: 'Dashboard'
+        icon: <HomeOutlined />,
+        text: 'Home',
+        path: pages.DASHBOARD,
     },
     {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
+        icon: <MailOutlined />,
+        text: 'Categories',
+        path: pages.CATEGORIES,
     },
     {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
+        icon: <TeamOutlined />,
+        text: 'Products',
+        path: pages.PRODUCTS,
     },
     {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
+        icon: <FireOutlined />,
+        text: 'Oders',
+        path: pages.ODERS,
     },
-    {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
-    }, {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
-    }, {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
-    }, {
-        icon: <img src={dashboardIcon} />,
-        icon_active: <img src={dashboardIconActive}></img>,
-        text: 'Dashboard'
-    }
 ]
 
 export default LINK_DATA
