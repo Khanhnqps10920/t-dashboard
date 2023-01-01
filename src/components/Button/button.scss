@@ -1,0 +1,16 @@
+.customBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-white{
+        font-weight: 700;
+        background: #ffffff;
+        color: #783EFD;
+        font-size: 1.5rem;
+    }
+    &-violet{
+        font-weight: 700;
+        background: #575C76;
+        color: #FBFBFB;
+    }
+}
