@@ -30,7 +30,7 @@ const objectModal: IModal = {
   }
   ],
   selectInput: [{
-    title: 'Messi vo di WC',
+    title: 'Messi vo dich WC',
     options: [{
       value: 3,
       label: '3'
