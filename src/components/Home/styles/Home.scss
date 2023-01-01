@@ -1,0 +1,180 @@
+@import '../../../Variable.scss';
+
+@mixin indexCard {
+    border-radius: 1.6rem;
+    background-color: $Theme-White;
+}
+
+
+.home {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        margin-bottom: 3.2rem;
+    }
+
+    .top {
+        .orders {
+            display: flex;
+            justify-content: space-between;
+
+            .order {
+                @include indexCard();
+                height: 16rem;
+                width: calc(100%/4 - 3.2rem);
+                min-width: 22rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Gilroy';
+
+                &__amount {
+                    margin-bottom: 0.5rem;
+                    line-height: 1;
+                    font-weight: 700;
+                    font-size: 6rem;
+                    color: $Theme-Color-Green;
+                }
+
+                &__product {
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    font-size: 2.4rem;
+                }
+
+                &__date {
+                    font-size: 1.3rem;
+                    color: $Date-Text-Color;
+                }
+            }
+        }
+    }
+
+    .middle {
+        display: flex;
+        justify-content: space-between;
+
+        .stats {
+            @include indexCard();
+            height: 38rem;
+            padding: 2.4rem;
+            display: flex;
+            flex-direction: column;
+            min-width: 66rem;
+            width: calc(75% - 1rem);
+
+            .tabs {
+                display: flex;
+                justify-content: end;
+                gap: 1rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 4.8rem;
+                    height: 3.2rem;
+                    padding: 0.6rem 1.6rem;
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    cursor: pointer;
+                    border: 1px solid $Search-Placeholder-Color;
+                    border-radius: 1.2rem;
+                    flex-grow: 0;
+
+                    &.active {
+                        color: $Theme-White;
+                        background-color: $Theme-Color-Green;
+                        border: none;
+                    }
+                }
+            }
+
+            .chart {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-self: center;
+                justify-content: center;
+                font-family: 'Gilroy';
+                text-align: center;
+
+                font-size: 8rem;
+
+            }
+        }
+
+        .balances {
+            @include indexCard();
+            font-family: 'Gilroy';
+            width: calc(100%/4 - 3.2rem);
+            min-width: 22rem;
+            height: 38rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+
+            &__title {
+                font-size: 2.4rem;
+            }
+
+            &__amount {
+                &__top {
+                    font-family: 'Poppins';
+                    font-weight: 400;
+
+                    .currency {
+                        font-size: 2.4rem;
+                        color: $Theme-Color-Blue;
+                    }
+
+                    font-size: 1.6rem;
+                }
+
+                &__bottom {
+                    font-size: 3.4rem;
+                    color: $Theme-Color-Blue;
+                }
+            }
+
+            &__img {
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-width: 25rem;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        &.row {
+            margin-bottom: 0;
+        }
+
+        .recent-orders {
+            @include indexCard();
+            min-width: 66rem;
+            width: calc(75% - 1rem);
+        }
+
+        .team {
+            @include indexCard();
+            width: calc(100%/4 - 3.2rem);
+            min-width: 22rem;
+        }
+    }
+
+}

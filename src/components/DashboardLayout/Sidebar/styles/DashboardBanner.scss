@@ -7,16 +7,15 @@
 
 .dashboard-banner {
     font-family: "Gilroy";
-    position: absolute;
+    margin-top: auto;
     width: 21.6rem;
     height: 26.9rem;
-    left: 1.95rem;
-    bottom: 3.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: $Theme-Color-Green;
     border-radius: 1.6rem;
+    transform: translateX(-2rem);
 
     .icon__wrapper {
         margin-top: 2.7rem;

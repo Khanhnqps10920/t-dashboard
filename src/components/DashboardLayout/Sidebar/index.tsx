@@ -8,12 +8,14 @@ import { DashBoardContext } from '../DashboardLayout'
 
 const Sidebar = () => {
     const { type } = useContext(DashBoardContext);
-    return (
+    return (<>
+        <div className="empty-space"></div>
         <div className={`sidebar ${type}`}>
             <Logo />
             <NavLinks />
             {type === 'dashboard' && <DashBoardBanner />}
         </div>
+    </>
     )
 }
 
