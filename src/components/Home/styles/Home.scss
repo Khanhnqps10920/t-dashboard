@@ -1,0 +1,30 @@
+@import '../../../Variable.scss';
+
+@mixin indexCard {
+    background-color: $Theme-White;
+    border-radius: 1.6rem;
+}
+
+.home {
+    .row {
+        margin-bottom: 3.2rem;
+    }
+
+    .top {
+        .orders {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .middle {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .bottom {
+        &.row {
+            margin-bottom: 0;
+        }
+    }
+}

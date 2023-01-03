@@ -28,7 +28,7 @@ type ContentPropsType = {
 const Content = styled.div<ContentPropsType>`
   flex:1;
   padding: ${props => props.dashboard
-    ? "3px 32px"
+    ? "3px 32px 34px"
     : "38px 24px"};
 `;
 type DashBoardConfigType = {

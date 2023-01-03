@@ -15,20 +15,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <AuthContextProvider authProvider={authProvider}>
-        <Routes>
-          <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
-            <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
-              <Route index element={<Home />} />
-              <Route path={'/test'} element={<TestPage />} />
-            </Route>
+      {/* <AuthContextProvider authProvider={authProvider}> */}
+      <Routes>
+        <Route path={pages.DASHBOARD} element={<PrivateRoute />}>
+          <Route path={pages.DASHBOARD} element={<DashboardLayout type='dashboard' />}>
+            <Route index element={<Home />} />
+            <Route path={'/test'} element={<TestPage />} />
           </Route>
+        </Route>
 
-          <Route path={pages.LOGIN} element={<PublicRoute />}>
-            <Route index element={<Login />} />
-          </Route>
-        </Routes>
-      </AuthContextProvider>
+        <Route path={pages.LOGIN} element={<PublicRoute />}>
+          <Route index element={<Login />} />
+        </Route>
+      </Routes>
+      {/* </AuthContextProvider> */}
     </BrowserRouter>
   );
 }
