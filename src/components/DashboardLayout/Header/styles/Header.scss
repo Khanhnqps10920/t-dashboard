@@ -3,10 +3,10 @@
 .header {
     width: 100%;
     display: flex;
+    justify-content: left;
     align-items: center;
     padding: 1.8rem 2.4rem;
     font-family: 'Poppins';
-    background-color: $Theme-White;
 
     &__left {
         margin-right: auto;
@@ -72,7 +72,8 @@
     }
 
     &.dashboard {
-        background-color: transparent;
+        // background-color: transparent;
+        background: white;
         justify-content: space-between;
 
         .header__left {

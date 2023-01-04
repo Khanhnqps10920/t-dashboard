@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.scss';
+import './components/Table/Table.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/Auth';
 import authProvider from './contexts/AuthProvider';

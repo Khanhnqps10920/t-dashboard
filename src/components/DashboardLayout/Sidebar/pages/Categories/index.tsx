@@ -1,5 +1,6 @@
 import React from 'react';
+import TableComponent from '../../../../Table/TableComponent';
 
 export const CategoriesPage = () => {
-    return <div>CategoriesPage</div>;
+    return <TableComponent></TableComponent>;
 };
