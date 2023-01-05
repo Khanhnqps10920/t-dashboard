@@ -1,0 +1,27 @@
+@import '../styles/Home.scss';
+
+.order {
+    @include indexCard();
+    height: 18rem;
+    width: calc(100%/4 - 1.6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy';
+
+    &__amount {
+        font-size: 6rem;
+        color: $Theme-Color-Green;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+
+    &__product {
+        font-size: 2rem;
+    }
+
+    &__date {
+        color: $Date-Text-Color;
+    }
+}
