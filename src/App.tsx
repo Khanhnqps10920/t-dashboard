@@ -24,9 +24,6 @@ function App() {
               element={<DashboardLayout type="dashboard" />}
             >
               <Route index element={<Home />} />
-              <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
-              <Route path={pages.PRODUCTS} element={<ProductPage />}></Route>
-              <Route path={pages.ODERS} element={<OdersPage />}></Route>
               <Route path={'/test'} element={<TestPage />} />
             </Route>
           </Route>
