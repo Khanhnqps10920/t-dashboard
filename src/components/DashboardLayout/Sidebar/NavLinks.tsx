@@ -6,7 +6,7 @@ import './styles/NavLinks.scss'
 
 const NavLinks = () => {
     const [activeLink, setActiveLink] = useState(0);
-
+    console.log(LINK_DATA);
     const renderedLinks = LINK_DATA.map((link, index) => (
         <NavLink
             onClick={() => { setActiveLink(index) }}

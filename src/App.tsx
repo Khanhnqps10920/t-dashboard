@@ -12,7 +12,7 @@ import { DashboardLayout } from './components/DashboardLayout/DashboardLayout';
 import { TestPage } from './components/SamplePage';
 import { CategoriesPage } from './components/DashboardLayout/Sidebar/pages/Categories';
 import { ProductPage } from './components/DashboardLayout/Sidebar/pages/Product';
-import { OdersPage } from './components/DashboardLayout/Sidebar/pages/Oder';
+import { OrdersPage } from './components/DashboardLayout/Sidebar/pages/Oder';
 
 function App() {
   return (
@@ -25,9 +25,9 @@ function App() {
               element={<DashboardLayout type="dashboard" />}
             >
               <Route index element={<Home />} />
-              <Route path={pages.CATEGORIES} element={<CategoriesPage />}></Route>
-              <Route path={pages.PRODUCTS} element={<ProductPage />}></Route>
-              <Route path={pages.ODERS} element={<OdersPage />}></Route>
+              <Route path={pages.CATEGORIES} element={<CategoriesPage path={pages.CATEGORIES} />}></Route>
+              <Route path={pages.PRODUCTS} element={<ProductPage path={pages.PRODUCTS} />}></Route>
+              <Route path={pages.ORDERS} element={<OrdersPage path={pages.ORDERS} />}></Route>
               <Route path={'/test'} element={<TestPage />} />
             </Route>
           </Route>

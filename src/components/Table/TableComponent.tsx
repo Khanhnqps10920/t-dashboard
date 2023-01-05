@@ -4,27 +4,28 @@ import { UserIdentity } from '../../types/user'
 import axios, { AxiosRequestConfig } from 'axios'
 import type { ColumnsType } from 'antd/es/table'
 import { DeleteOutlined, EditOutlined, MessageOutlined } from '@ant-design/icons'
-import { v4 as uuidv4 } from 'uuid';
 import '../Table/Table.scss'
 import user from '../../assets/image/image-2.png'
 import authAxios from '../../axios/Auth/instance';
-const TableComponent = () => {
-    const [dataSource, setDataSource] = useState<any>([])
+
+const TableComponent = ({ path }: { path: string }) => {
+    const [dataSource, setDataSource] = useState<any>([]) //any: interface of data API
     const [loading, setLoading] = useState<boolean>(false)
     useEffect(() => {
         fetchPosts();
     }, [])
 
     const fetchPosts = async () => {
-        setLoading(true)
-        const respone = await authAxios.get('/categories')
-        setDataSource(respone.data.data.data.list)
-        console.log(respone.data.data.data.list)
-        // const list = respone.data
-        respone.data.data.data.list.forEach((element: any) => {
-            element.key = element.id;
-        });
-        // setDataSource(respone.data);
+        try {
+            setLoading(true)
+            const respone = await authAxios.get(path);
+            setDataSource(respone.data.data.data.list)
+            respone.data.data.data.list.forEach((element: any) => {
+                element.key = element.id;
+            });
+        } catch (error) {
+            console.log(error);
+        }
         setLoading(false)
     }
 
@@ -79,7 +80,6 @@ const TableComponent = () => {
             dataSource={dataSource}
             pagination={{ showSizeChanger: false, pageSize: 5, onChange: (page) => { fetchPosts() } }}
             loading={loading} >
-
         </Table>
     )
 }

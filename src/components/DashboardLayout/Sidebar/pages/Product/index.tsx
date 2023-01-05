@@ -1,5 +1,6 @@
 import React from 'react';
+import TableComponent from '../../../../Table/TableComponent';
 
-export const ProductPage = () => {
-    return <div>ProductPage</div>;
+export const ProductPage = ({ path }: { path: string }) => {
+    return <TableComponent path={path}></TableComponent>;
 };
