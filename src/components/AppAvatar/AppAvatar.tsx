@@ -1,5 +1,4 @@
-// demo:<Avatar email="admin@gmail.com" size='large'/>
-import './avatar.scss';
+import './AppAvatar.scss';
 
 interface AvatarProps {
   email?: string;

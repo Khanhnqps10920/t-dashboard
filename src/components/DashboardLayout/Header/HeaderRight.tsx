@@ -2,7 +2,7 @@ import React from 'react';
 import Notifs from './Notifs';
 import userPhoto from '../../../assets/User-Photo.png';
 import { useAuth } from '../../../contexts/Auth';
-import AppAvatar from '../../Avatar/AppAvatar';
+import AppAvatar from '../../AppAvatar/AppAvatar';
 
 const HeaderRight = () => {
   const { identity } = useAuth();
