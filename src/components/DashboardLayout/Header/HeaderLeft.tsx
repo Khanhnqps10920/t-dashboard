@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import getDate from './utils'
+import { useAuth } from '../../../contexts/Auth';
 
 const HeaderLeft = () => {
+  const { identity } = useAuth();
+  // name will be retrieved from context api
+  return (
+    <div className="header__left">
+      <div className="hello">Hello {identity?.email}</div>
+    </div>
+  );
+};
 
-    const [date, setDate] = useState(getDate());
-    useEffect(() => {
-        const updateTime = setInterval(() => { setDate(getDate()) }, 2000)
-        return () => {
-            clearInterval(updateTime)
-        }
-    }, [])
-    // name will be retrieved from context api
-    const name = 'Kruluz Utsman'
-    return (
-        <div className="header__left">
-            <div className="hello">Hello {name}</div>
-            <div className="date">{date}</div>
-        </div>
-    )
-}
-
-export default HeaderLeft
+export default HeaderLeft;

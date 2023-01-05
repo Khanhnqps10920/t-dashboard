@@ -1,22 +1,26 @@
-import React from 'react'
-import Notifs from './Notifs'
-import userPhoto from '../../../assets/User-Photo.png'
+import React from 'react';
+import Notifs from './Notifs';
+import userPhoto from '../../../assets/User-Photo.png';
+import { useAuth } from '../../../contexts/Auth';
+import Avatar from '../../Avatar/Avatar';
 
 const HeaderRight = () => {
+  const { identity } = useAuth();
 
-    // name will be retrieved from context api
-    const name = 'Kruluz Utsman'
+  return (
+    <div className="header__right">
+      <Notifs />
+      <span className="name--left">{identity?.email}</span>
 
-
-    return (
-        <div className="header__right">
-            <Notifs />
-            <span className='name--left'>{name}</span>
-            <div className="user-photo">
-                <img src={userPhoto} />
-            </div>
+      {identity?.avatar ? (
+        <div className="user-photo">
+          <img src={identity.avatar} />
         </div>
-    )
-}
+      ) : (
+        <Avatar email={identity?.email} />
+      )}
+    </div>
+  );
+};
 
-export default HeaderRight
+export default HeaderRight;
