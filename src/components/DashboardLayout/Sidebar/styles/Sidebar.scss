@@ -1,14 +1,21 @@
 @import '../../../../Variable.scss';
 
-.sidebar {
-    position: relative;
-    height: 100vh;
+.empty-space {
     width: 30rem;
+}
+
+.sidebar {
+    min-height: 100vh;
+    // width: 30rem;
     padding: 2.2rem 2.8rem 3.4rem;
     display: flex;
     flex-direction: column;
     box-shadow: 0.4rem 0.4rem 4rem $Sidebar-Shadow-Color;
     background-color: $Theme-White;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: auto;
 
     &.dashboard {
         width: 25.5rem;

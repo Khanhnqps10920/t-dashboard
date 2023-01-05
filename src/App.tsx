@@ -9,6 +9,9 @@ import { pages } from './utils/constant';
 import { Home } from './components/Home';
 import { DashboardLayout } from './components/DashboardLayout/DashboardLayout';
 import { TestPage } from './components/SamplePage';
+import { CategoriesPage } from './components/DashboardLayout/Sidebar/pages/Categories';
+import { ProductPage } from './components/DashboardLayout/Sidebar/pages/Product';
+import { OdersPage } from './components/DashboardLayout/Sidebar/pages/Oder';
 
 function App() {
   return (
