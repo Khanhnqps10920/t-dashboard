@@ -2,7 +2,7 @@ import React from 'react';
 import Notifs from './Notifs';
 import userPhoto from '../../../assets/User-Photo.png';
 import { useAuth } from '../../../contexts/Auth';
-import Avatar from '../../Avatar/Avatar';
+import AppAvatar from '../../Avatar/AppAvatar';
 
 const HeaderRight = () => {
   const { identity } = useAuth();
@@ -17,7 +17,7 @@ const HeaderRight = () => {
           <img src={identity.avatar} />
         </div>
       ) : (
-        <Avatar email={identity?.email} />
+        <AppAvatar email={identity?.email} />
       )}
     </div>
   );
