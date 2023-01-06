@@ -22,14 +22,17 @@ interface Iprops {
 const objectModal: IModal = {
   mainTitle: 'Are you sure ?',
   normalInput: [{
+    name: 'valueSample1',
     title: 'hmmmm',
     placeholder: 'placeholder'
   }, {
+    name: 'valueSample2',
     title: 'hahaha',
     placeholder: 'placeholder'
   }
   ],
   selectInput: [{
+    name: 'valueSample3',
     title: 'Messi vo dich WC',
     options: [{
       value: 3,
@@ -43,11 +46,13 @@ const objectModal: IModal = {
   }],
   textInput: null,
   fileInput: [{
+    name: 'valueSample4',
     title: 'file ne',
     type: ['.docx', '.png', '.pdf']
   }],
   additionalInput: null,
   dateInput: [{
+    name: 'valueSample5',
     title: 'idol KDB',
     placeholder: 'placeholder'
   },],
@@ -84,12 +89,15 @@ const AddForm = ({ indexEdit, setIndexEdit, dataSubmit, setDataSubmit }: Iprops)
   }
   //Handle the data input
 
+  const [resultModal, setResultModal] = useState<any>(null);
+  console.log(resultModal);
+
   return (
     <form action="" onSubmit={(event) => { onSubmit(event) }}>
       <input type="text" name="name" value={dataSubmit.name} onChange={(event) => { onChangeInput(event) }} />
       <input type="text" name="title" value={dataSubmit.title} onChange={(event) => { onChangeInput(event) }} />
       <button type="submit" onClick={() => { setIsOpen(true) }}>Submit</button>
-      <CustomModal modalProps={objectModal} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <CustomModal modalProps={objectModal} isOpen={isOpen} setIsOpen={setIsOpen} setResultModal={setResultModal}/>
     </form>
   );
 }

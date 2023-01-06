@@ -1,5 +1,5 @@
 //import ant design
-import { Button, DatePicker, DatePickerProps, Form, Input, Modal, Select } from "antd";
+import { Button, DatePicker, Form, Input, Modal, Select } from "antd";
 import { message, Upload, UploadFile } from "antd";
 import { UploadChangeParam, UploadProps } from "antd/es/upload";
 
@@ -15,35 +15,32 @@ import pickerImg from '../../assets/Picker.jpg'
 //import style
 import './modal.scss'
 import { useState } from "react";
+import { useForm } from "antd/es/form/Form";
 
 interface IProps {
     modalProps: IModal,
     isOpen: boolean,
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setResultModal: React.Dispatch<any>,
 };
 
 
-const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
+const CustomModal = ({ modalProps, isOpen, setIsOpen, setResultModal }: IProps) => {
 
     const [submitData, setSubmitData] = useState<any>(null);
 
-    const handleChange = (name: string, value: string | number) => {
-        console.log(value);
-        setSubmitData({ ...submitData, [name]: value });
-        console.log(submitData);
-    }
+    const handleChange = (name: string, value: string | number) => setSubmitData({...submitData, [name]: value });
 
     //Select logic
     const renderSelect = (contentArray: ISelectInput[] | null) => {
         return contentArray?.map((element, index) => {
-            //Title need to be implemented
             return (
                 <Form.Item className="Modal__labelForm" key={`select-${index}`}>
                     <label>{element.title}</label>
                     <Select
                         defaultValue={element.options[0].value}
                         options={element.options}
-                        onChange={(value) => { handleChange(element.title, value) }}
+                        onChange={(value) => { handleChange(element.name, value) }}
                         suffixIcon={<img src={vectorImg} />}
                     />
                 </Form.Item>)
@@ -51,9 +48,8 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
     }
 
     //Date Logic
-    const handleChangeDate: DatePickerProps['onChange'] = (date, dateString) => {
-        console.log(date, dateString);
-    }
+    const handleChangeDate = (date:any | null, name: string, dateString: string) => setSubmitData({...submitData, [name]:dateString});
+
     //format date
     const dateFormat = 'DD/MM/YYYY';
     const renderDate = (contentArray: IDate[] | null) => {
@@ -65,7 +61,7 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                     < br />
                     <DatePicker
                         style={{ width: '100%' }}
-                        onChange={(date, dateString) => { handleChangeDate(date, dateString) }}
+                        onChange={(date, dateString) => { handleChangeDate(date, element.name, dateString) }}
                         format={dateFormat}
                         name={element.title}
                         placeholder={element.placeholder}
@@ -98,11 +94,9 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                 message.error(`${info.file.name} file upload failed.`);
             }
         },
-        onDrop(event: React.DragEvent<HTMLDivElement>) {
-            console.log('Dropped files', event.dataTransfer.files);
-        },
     };
-
+    
+    const onChange = (name: string, info: UploadChangeParam<UploadFile<any>>) => setSubmitData({...submitData, [name]: info.fileList});
     const renderFile = (contentArray: IFileType[] | null) => {
         return contentArray?.map((element, index) => {
             return (
@@ -111,6 +105,7 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                     <Dragger
                         name={element.title}
                         {...fileProps}
+                        onChange={(info)=>{onChange(element.name,info)}}
                         beforeUpload={(file) => {
                             const name = file.name;
                             let checkExist = false;
@@ -137,10 +132,7 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
 
     //Text Logic
     const { TextArea } = Input;
-    const handleChangeText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const { name, value } = event.target;
-        console.log(name, value);
-    }
+    const handleChangeText = (name: string, event: React.ChangeEvent<HTMLTextAreaElement>) => setSubmitData({...submitData, [name]: event.target.value});
     const renderText = (contentArray: ITextBox[] | null) => {
         return contentArray?.map((element, index) => {
             return (
@@ -149,18 +141,14 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                     <TextArea
                         name={element.title}
                         placeholder={element.placeholder}
-                        onChange={(event) => { handleChangeText(event) }}
+                        onChange={(event) => { handleChangeText(element.name, event) }}
                     />
                 </Form.Item>)
         });
     }
 
     //Normal Input Logic
-    const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setSubmitData({ ...submitData, [name]: value });
-        console.log(submitData);
-    }
+    const handleChangeInput = (name:string, event: React.ChangeEvent<HTMLInputElement>) => setSubmitData({...submitData, [name]: event.target.value});
     const renderInput = (contentArray: IInput[] | null) => {
         return contentArray?.map((element, index) => {
             return (
@@ -169,33 +157,28 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                     <Input
                         placeholder={element.placeholder}
                         name={element.title}
-                        onChange={event => { handleChangeInput(event) }}
+                        onChange={event => { handleChangeInput(element.name, event) }}
                     />
                 </Form.Item>)
         });
     }
 
-    const onFinish = (values: any) => {
-        console.log({ ...values });
-
-    }
-
-    const onSubmitCapture = (event: React.FormEvent<HTMLFormElement>) => {
-        console.log(event.currentTarget);
+    const onFinish = () => {
+        setResultModal(submitData);
+        setSubmitData(null);
     }
 
     return (
         <Modal
             open={isOpen}
             className="Modal"
-            onOk={() => { setIsOpen(false) }}
-            onCancel={() => { setIsOpen(false) }}
+            onCancel={() => { setIsOpen(false)}}
             footer={null}
             closeIcon={<img style={{ height: '1rem', width: '1rem' }} src={closeIconImg} />}
         >
             <div className="Modal__title">{modalProps.mainTitle}</div>
             <div className="Modal__line"></div>
-            <Form onFinish={(values) => onFinish(values)} onSubmitCapture={(event) => onSubmitCapture(event)}>
+            <Form onFinish={onFinish} initialValues={undefined}>
                 {renderInput(modalProps.normalInput)}
                 {renderSelect(modalProps.selectInput)}
                 {renderDate(modalProps.dateInput)}
@@ -203,7 +186,7 @@ const CustomModal = ({ modalProps, isOpen, setIsOpen }: IProps) => {
                 {renderInput(modalProps.additionalInput)}
                 {renderText(modalProps.textInput)}
                 <div style={{ display: "flex", position: 'relative', height: '3rem' }}>
-                    <Button key={modalProps.buttonContent} htmlType='submit' className="Modal__button" onClick={() => { setIsOpen(false); }}>{modalProps.buttonContent}</Button>
+                    <Button key={modalProps.buttonContent} htmlType='submit' className="Modal__button" onClick={() => { setIsOpen(false);}}>{modalProps.buttonContent}</Button>
                 </div>
             </Form>
         </Modal >);

@@ -1,11 +1,13 @@
 // Normal Input
 export interface IInput {
+    name: string,
     title: string,
     placeholder: string,
 };
 
 // Select Box
 export interface ISelectInput {
+    name: string,
     title: string,
     options: IOptions[],
 }
@@ -17,6 +19,7 @@ export interface IOptions {
 
 // Date
 export interface IDate {
+    name: string,
     title: string,
     placeholder: string,
 };
@@ -30,6 +33,7 @@ export interface IFileType {
 
 // Text Box
 export interface ITextBox {
+    name: string,
     title: string,
     placeholder: string,
 };
