@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.scss';
-import './components/Table/Table.scss'
+import './components/Table/Table.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/Auth';
 import authProvider from './contexts/AuthProvider';
@@ -25,9 +25,18 @@ function App() {
               element={<DashboardLayout type="dashboard" />}
             >
               <Route index element={<Home />} />
-              <Route path={pages.CATEGORIES} element={<CategoriesPage path={pages.CATEGORIES} />}></Route>
-              <Route path={pages.PRODUCTS} element={<ProductPage path={pages.PRODUCTS} />}></Route>
-              <Route path={pages.ORDERS} element={<OrdersPage path={pages.ORDERS} />}></Route>
+              <Route
+                path={pages.CATEGORIES}
+                element={<CategoriesPage path={pages.CATEGORIES} />}
+              ></Route>
+              <Route
+                path={pages.PRODUCTS}
+                element={<ProductPage path={pages.PRODUCTS} />}
+              ></Route>
+              <Route
+                path={pages.ORDERS}
+                element={<OrdersPage path={pages.ORDERS} />}
+              ></Route>
               <Route path={'/test'} element={<TestPage />} />
             </Route>
           </Route>
