@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const Team = () => {
+const Team = () => {
   return <div>Team</div>;
 };
+
+export default Team;

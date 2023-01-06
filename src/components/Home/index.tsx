@@ -4,7 +4,7 @@ import Order from './Order';
 import Stats from './Stats';
 import Balances from './Balances';
 import RecentOrders from './RecentOrders';
-import { Team } from './\bTeam';
+import Team from './Team';
 
 const orders = [
   {
