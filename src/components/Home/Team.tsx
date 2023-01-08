@@ -1,7 +1,9 @@
-import React from 'react';
-
+import TabCard from './Card';
 const Team = () => {
-  return <div>Team</div>;
+  return <TabCard>
+      <div>
+        <div className="tabcard__title">Team</div>
+      </div>
+    </TabCard>;
 };
-
 export default Team;

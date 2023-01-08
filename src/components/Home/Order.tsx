@@ -1,5 +1,4 @@
-import './styles/Order.scss'
-
+import TabCard from './Card'
 export type OrderType = {
     amount: number,
     product: string,
@@ -12,12 +11,13 @@ type OrderPropsType = {
 
 const Order = ({ order }: OrderPropsType) => {
     return (
-        <div className="order">
-            <h2 className='order__amount'>{order.amount}</h2>
-            <p className='order__product'>{order.product}</p>
-            <p className='order__date'>Created: {order.date}</p>
-        </div>
+        <TabCard>
+            <div>
+                <p className='tabcard__large green'>{order.amount}</p>
+                <p className='tabcard__medium'>{order.product}</p>
+                <p className='tabcard__small'>Created: {order.date}</p>
+            </div>
+        </TabCard>
     )
 }
-
 export default Order

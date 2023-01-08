@@ -1,19 +1,24 @@
-import './styles/Stats.scss'
-
+import TabCard from './Card'
 const Stats = () => {
     return (
-        <div className="stats">
-            <div className="tabs">
-                <span className='tab active'>ALL</span>
-                <span className='tab'>1M</span>
-                <span className='tab'>6M</span>
-                <span className='tab'>1Y</span>
-                <span className='tab'>YTD</span>
+        <TabCard>
+            <div>
+                    <div>
+                        <p className='tabcard__title'>Market Overview</p>
+                        <p className='tabcard__small green'>7.7777,77.7(77%)</p>
+                    </div>
+                    <div className="tabcard__tabs">
+                        <span className='tabcard__tabs__tab active'>ALL</span>
+                        <span className='tabcard__tabs__tab'>1M</span>
+                        <span className='tabcard__tabs__tab'>6M</span>
+                        <span className='tabcard__tabs__tab'>1Y</span>
+                        <span className='tabcard__tabs__tab'>YTD</span>
+                    </div>
+                <div className='tabcard__chart'>
+                    CHART
+                </div>
             </div>
-            <div className="chart">
-                CHART
-            </div>
-        </div>
+        </TabCard>
     )
 }
 
