@@ -2,7 +2,7 @@ export const pages = {
   LOGIN: '/login',
   DASHBOARD: '/',
   CATEGORIES: '/categories',
-  ODERS: '/oders',
+  ORDERS: '/orders',
   PRODUCTS: '/products'
 };
 
