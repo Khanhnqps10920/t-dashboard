@@ -11,6 +11,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
     "@nivo/core": "^0.80.0",
+    "@nivo/generators": "^0.80.0",
     "@nivo/line": "^0.80.0",
     "@reduxjs/toolkit": "^1.9.1",
     "@types/react-redux": "^7.1.24",
