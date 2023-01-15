@@ -16,7 +16,7 @@ authAxios.interceptors.request.use((config: any) => {
     if (!config?.headers) {
         throw new Error(`Expected 'config' and 'config.headers' not to be undefined`);
     }
-    
+
     config.headers.Authorization = 'Bearer ' + localStorage.getItem('accessToken');
 
     return config
