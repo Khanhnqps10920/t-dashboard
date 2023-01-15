@@ -1,11 +1,11 @@
-import "./styles/Card.scss"
-interface PropCard{
+import "./tabCard.scss"
+interface PropTabCard{
     children:JSX.Element;
 }
-const TabCard=({children}:PropCard)=>{
+const TabCard=(props:PropTabCard)=>{
     return(
         <div className='tabcard'>
-            {children}
+            {props.children}
         </div>
     )
 }

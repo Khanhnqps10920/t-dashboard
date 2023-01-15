@@ -26,4 +26,29 @@
         padding-left: 1rem;
         width: 25%;
     }
+    .blue {
+        color: $Theme-Color-Blue;
+    }
+    .green{
+        color: $Theme-Color-Green;
+    }
+    .title{
+        font-size: 3.6rem;
+        font-weight: 400;
+    }
+    .large{
+        font-size: 6rem;
+        font-weight: 500;
+    }
+    .medium{
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+    .small{
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+    .date {
+        color: $Date-Text-Color;
+    }
 }

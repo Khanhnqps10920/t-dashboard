@@ -1,4 +1,4 @@
-import TabCard from './Card'
+import TabCard from '../TabCard/TabCard'
 export type OrderType = {
     amount: number,
     product: string,
@@ -13,9 +13,9 @@ const Order = ({ order }: OrderPropsType) => {
     return (
         <TabCard>
             <div>
-                <p className='tabcard__large green'>{order.amount}</p>
-                <p className='tabcard__medium'>{order.product}</p>
-                <p className='tabcard__small'>Created: {order.date}</p>
+                <p className='large green'>{order.amount}</p>
+                <p className='medium'>{order.product}</p>
+                <p className='small'>Created: {order.date}</p>
             </div>
         </TabCard>
     )

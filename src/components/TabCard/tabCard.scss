@@ -1,0 +1,11 @@
+@import '../../Variable.scss';
+.tabcard{
+    border-radius: $Card-Boder-radius;
+    background-color: $Theme-White;
+    padding:2rem;
+    font-family: 'Gilroy';
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

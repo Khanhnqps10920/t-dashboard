@@ -1,8 +1,8 @@
-import TabCard from './Card';
+import TabCard from '../TabCard/TabCard';
 const Team = () => {
   return <TabCard>
       <div>
-        <div className="tabcard__title">Team</div>
+        <div className="title">Team</div>
       </div>
     </TabCard>;
 };

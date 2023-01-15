@@ -42,7 +42,7 @@ export const Home = () => {
       </div>
       <div className="middle">
         <div className='left'>
-          <Stats />
+          <Stats/>
         </div>
         <div className='right'>
           <Balances />
