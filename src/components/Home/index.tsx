@@ -37,18 +37,24 @@ export const Home = () => {
 
   return (
     <div className="home">
-      <div className="top row">
+      <div className="top">
         <div className="orders">{renderedOrders}</div>
       </div>
-
-      <div className="middle row">
-        <Stats />
-        <Balances />
+      <div className="middle">
+        <div className='left'>
+          <Stats/>
+        </div>
+        <div className='right'>
+          <Balances />
+        </div>
       </div>
-
-      <div className="bottom row">
-        <RecentOrders />
-        <Team />
+      <div className='bottom'>
+        <div className='left'>
+          <RecentOrders />
+        </div>
+        <div className='right'>
+          <Team />
+        </div>
       </div>
     </div>
   );

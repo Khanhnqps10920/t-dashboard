@@ -32,6 +32,8 @@ $Sidebar-Shadow-Color: rgba(0, 0, 0, 0.06);
 $Date-Text-Color: #707EAE;
 $Search-Placeholder-Color: #AEB6CF;
 $Notifs-active-Dot-Color: #F23985;
+//card
+$Card-Boder-radius:1.6rem;
 
 @mixin button-Needed {
     width: 13rem;
@@ -39,7 +41,6 @@ $Notifs-active-Dot-Color: #F23985;
     background: rgba(36, 193, 143, 0.2);
     border-radius: 1.6rem;
     cursor: pointer;
-
     &:hover {
         background: rgba(36, 193, 143, 0.6);
     }

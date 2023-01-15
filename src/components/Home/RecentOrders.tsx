@@ -1,7 +1,8 @@
 import { Table } from 'antd'
 import { OrderType } from './Order'
 import { ColumnsType } from 'antd/es/table'
-import './styles/RecentOrders.scss'
+import TabCard from '../TabCard/TabCard'
+// import './styles/RecentOrders.scss'
 
 type RecentOrdersDataType = OrderType & { key: string }
 
@@ -47,10 +48,12 @@ const data: RecentOrdersDataType[] = [
 
 
 const RecentOrders = () => {
-    return <div className='recent-orders'>
-        <h2>Recent Orders</h2>
-        <Table showHeader={false} columns={columns} dataSource={data} pagination={false} />
-    </div>
+    return <TabCard>
+        <div>
+            <p className='title'>Recent Orders</p>
+            <Table showHeader={false} columns={columns} dataSource={data} pagination={false} />
+        </div>
+    </TabCard>
 }
 
 export default RecentOrders

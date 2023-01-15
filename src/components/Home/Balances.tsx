@@ -1,23 +1,17 @@
 import balanceImg from '../../assets/image/balanceIllustration.png'
-import './styles/Balances.scss'
-
+import TabCard from '../TabCard/TabCard';
 const balanceAmount = 8890.20;
 
 const Balances = () => {
     return (
-        <div className="balances">
-            <h2 className='balances__title'>Balances</h2>
-            <div className="balances__amount">
-                <p className="balances__amount__top">
-                    <span className='currency'>$</span> Dollar:
-                </p>
-                <p className="balances__amount__bottom">{balanceAmount.toFixed(2)}</p>
+        <TabCard>
+            <div>
+                <p className='title'>Balances</p>
+                <p className="small"><span className='medium blue'>$</span> Dollar:</p>
+                <p className="title blue">{balanceAmount.toFixed(2)}</p>
+                <img className='img' src={balanceImg} />
             </div>
-            <div className="balances__img">
-                <img src={balanceImg} />
-            </div>
-        </div>
+        </TabCard>
     )
 }
-
 export default Balances
