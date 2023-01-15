@@ -1,0 +1,71 @@
+@import '../../Variable.scss';
+
+.Modal {
+    padding: 2rem;
+
+    &__title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+    }
+
+    ;
+
+    &__line {
+        height: 0.1rem;
+        background-color: #D6E4EC;
+        margin: 1rem 0;
+    }
+
+    ;
+
+    &__labelForm {
+        font-family: 'Poppins-Thin', sans-serif;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        font-size: 1rem;
+        color: #343C44;
+    }
+
+    ;
+
+    &__file {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &__img {
+            width: 3.6rem;
+            height: 3.6rem;
+        }
+
+        ;
+
+        &__content {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        ;
+    }
+
+    ;
+
+    &__button {
+        position: absolute;
+        background-color: $Theme-Color-Blue;
+        color: white;
+        border: none;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        right: 0;
+    }
+
+    ;
+}
